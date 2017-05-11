@@ -1,2 +1,2 @@
-# Taylor-Headley-Stanley-Stuck-on-an-Island-Team
+# Taylor-Headley-Stanley-Stuck-on-an-Island
 Repository for JS &amp; BY Team
