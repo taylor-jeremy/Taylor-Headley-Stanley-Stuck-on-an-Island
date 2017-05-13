@@ -5,6 +5,7 @@
  */
 package stuckonanisland;
 
+import byui.cit260.stuckOnAnIsland.model.Actor;
 import byui.cit260.stuckOnAnIsland.model.Game;
 import byui.cit260.stuckOnAnIsland.model.Location;
 import byui.cit260.stuckOnAnIsland.model.RaftScene;
@@ -86,6 +87,18 @@ public class StuckOnAnIsland {
         
         String buildSceneInfo = buildOne.toString();
         System.out.println(buildSceneInfo);
+        
+        // Actor Class Test
+        Actor actorOne = new Actor();
+        
+        actorOne.setName("John Doe");
+        actorOne.setDescription("Example Description");
+        actorOne.setEnergy(10);
+        actorOne.setHealth(9);
+        actorOne.setLocation("West Bay");
+        
+        String actorInfo = actorOne.toString();
+        System.out.println(actorInfo);
         
     }
     
