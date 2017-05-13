@@ -16,6 +16,9 @@ public class Game implements Serializable {
     // class instance variables
     private double totalTime;
     private double score;
+    
+    public Game() {
+    }
 
     public double getTotalTime() {
         return totalTime;
@@ -33,8 +36,6 @@ public class Game implements Serializable {
         this.score = score;
     }
 
-    public Game() {
-    }
 
     @Override
     public int hashCode() {

@@ -5,10 +5,12 @@
  */
 package byui.cit260.stuckOnAnIsland.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Ronnie-PC
  */
-public class Actor {
+public class Actor implements Serializable {
     
 }
