@@ -9,6 +9,8 @@ import byui.cit260.stuckOnAnIsland.model.Game;
 import byui.cit260.stuckOnAnIsland.model.Location;
 import byui.cit260.stuckOnAnIsland.model.RaftScene;
 import byui.cit260.stuckOnAnIsland.model.RegularSceneType;
+import byui.cit260.stuckOnAnIsland.model.GatherScene;
+import byui.cit260.stuckOnAnIsland.model.BuildScene;
 
 /**
  *
@@ -61,6 +63,30 @@ public class StuckOnAnIsland {
         
         String raftSceneInfo = raftOne.toString();
         System.out.println(raftSceneInfo);
+        
+        //GatherScene Class Test
+        GatherScene gatherOne = new GatherScene();
+        
+        gatherOne.setDescription("Jungle");
+        gatherOne.setAvailableResources("10");
+        gatherOne.setGatherResources("yes");
+        gatherOne.setEnergy(10);
+        
+        String gatherSceneInfo = gatherOne.toString();
+        System.out.println(gatherSceneInfo);
+        
+        //BuildScene Class Test
+        BuildScene buildOne = new BuildScene();
+        
+        buildOne.setDescription("Jungle");
+        buildOne.setAvailableTools("hammer");
+        buildOne.setBuildTools("yes");
+        buildOne.setEnergy(10);
+        buildOne.setHealth(10);
+        
+        String buildSceneInfo = buildOne.toString();
+        System.out.println(buildSceneInfo);
+        
     }
     
 }

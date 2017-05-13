@@ -109,6 +109,26 @@ public class GatherScene implements Serializable{
     public String toString() {
         return "GatherScene{" + "description=" + description + ", availableResources=" + availableResources + ", gatherResources=" + gatherResources + ", energy=" + energy + ", health=" + health + '}';
     }
+
+    public void setavailableResources(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setgatherResources(String yes) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setenergy(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setavailableResources(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setResources(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }
