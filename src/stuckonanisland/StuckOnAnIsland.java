@@ -12,6 +12,7 @@ import byui.cit260.stuckOnAnIsland.model.RaftScene;
 import byui.cit260.stuckOnAnIsland.model.RegularSceneType;
 import byui.cit260.stuckOnAnIsland.model.GatherScene;
 import byui.cit260.stuckOnAnIsland.model.BuildScene;
+import byui.cit260.stuckOnAnIsland.model.Map;
 
 /**
  *
@@ -100,6 +101,17 @@ public class StuckOnAnIsland {
         String actorInfo = actorOne.toString();
         System.out.println(actorInfo);
         
+        // Map Class Test
+        Map mapOne = new Map();
+        
+        mapOne.setDescription("Jungle");
+        mapOne.setRowCount(100);
+        mapOne.setColumnCount(100);
+        mapOne.setCurrentRow(56);
+        mapOne.setCurrentColumn(59);
+        
+        String mapInfo = mapOne.toString();
+        System.out.println(mapInfo);
     }
     
 }
