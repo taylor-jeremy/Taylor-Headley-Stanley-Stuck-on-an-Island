@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -119,10 +119,122 @@ public class ActorControlTest {
         result = instance.calcHealth(currentHealth, energy, time);
         assertEquals(expResult, result);
     
-    
-    
-    
     }
+
+    /**
+     * Test of calcEnergy method, of class ActorControl.
+     */
+    @Test
+    public void testCalcEnergy() {
+        System.out.println("calcEnergy");
+        int currentEnergy = 100;
+        int buildTools = 30;
+        int buildRaft = 40;
+        int moveLocation = 50;
+        int gatherResources = 60;
+        int eatFood = 10;
+        int drinkWater = 20;
+        ActorControl instance = new ActorControl();
+        int expResult = 0;
+        int result = instance.calcEnergy(currentEnergy, buildTools, buildRaft, moveLocation, gatherResources, eatFood, drinkWater);
+        assertEquals(expResult, result);
         
     
-}
+     //test case #2
+        System.out.println("\tTest case #2");
+        
+        // input values for test case 2
+        currentEnergy = 30;
+        buildTools = 10;
+        buildRaft = 0;
+        gatherResources = 0;
+        moveLocation = 0;
+        eatFood = 20;
+        drinkWater = 20;
+        
+        expResult = 60;
+        result = instance.calcEnergy(currentEnergy, buildTools, buildRaft, moveLocation, gatherResources, eatFood, drinkWater);
+        assertEquals(expResult, result);
+        
+        //test case #3
+        System.out.println("\tTest case #3");
+        
+        // input values for test case 3
+        currentEnergy = 10;
+        buildTools = 2;
+        buildRaft = 10;
+        gatherResources = -10;
+        moveLocation = 20;
+        eatFood = 30;
+        drinkWater = 40;
+        
+        expResult = -1;
+        result = instance.calcEnergy(currentEnergy, buildTools, buildRaft, moveLocation, gatherResources, eatFood, drinkWater);
+        assertEquals(expResult, result);
+        
+        //test case #4
+        System.out.println("\tTest case #4");
+        
+        // input values for test case 4
+        currentEnergy = 100;
+        buildTools = 1000;
+        buildRaft = 10;
+        gatherResources = 50;
+        moveLocation = 7000;
+        eatFood = 2210;
+        drinkWater = -10;
+        
+        expResult = -1;
+        result = instance.calcEnergy(currentEnergy, buildTools, buildRaft, moveLocation, gatherResources, eatFood, drinkWater);
+        assertEquals(expResult, result);
+        
+        //test case #5
+        System.out.println("\tTest case #5");
+        
+        // input values for test case 5
+        currentEnergy = 20;
+        buildTools = 5;
+        buildRaft = 10;
+        gatherResources = 25;
+        moveLocation = 30;
+        eatFood = 30;
+        drinkWater = 30;
+        
+        expResult = 10;
+        result = instance.calcEnergy(currentEnergy, buildTools, buildRaft, moveLocation, gatherResources, eatFood, drinkWater);
+        assertEquals(expResult, result);
+        
+        //test case #6
+        System.out.println("\tTest case #6");
+        
+        // input values for test case 6
+        currentEnergy = 50;
+        buildTools = 0;
+        buildRaft = 0;
+        gatherResources = 0;
+        moveLocation = 0;
+        eatFood = 20;
+        drinkWater = 50;
+        
+        expResult = 100;
+        result = instance.calcEnergy(currentEnergy, buildTools, buildRaft, moveLocation, gatherResources, eatFood, drinkWater);
+        assertEquals(expResult, result);
+        
+        //test case #7
+        System.out.println("\tTest case #7");
+        
+        // input values for test case 7
+        currentEnergy = 100;
+        buildTools = 100;
+        buildRaft = 100;
+        gatherResources = 0;
+        moveLocation = 0;
+        eatFood = 20;
+        drinkWater = 20;
+        
+        expResult = 0;
+        result = instance.calcEnergy(currentEnergy, buildTools, buildRaft, moveLocation, gatherResources, eatFood, drinkWater);
+        assertEquals(expResult, result);
+        
+    
+}}
