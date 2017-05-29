@@ -237,4 +237,90 @@ public class ActorControlTest {
         assertEquals(expResult, result);
         
     
-}}
+}
+
+    /**
+     * Test of calcWaterStorageCapacity method, of class ActorControl.
+     */
+    @Test
+    public void testCalcWaterStorageCapacity() {
+        System.out.println("calcWaterStorageCapacity");
+        
+        //test case #1
+        System.out.println("\tTest case #1");
+        
+        //input values for test case 1
+        int height = 67;
+        int weight = 200;
+        ActorControl instance = new ActorControl();
+        double expResult = 59.0;
+        double result = instance.calcWaterStorageCapacity(height, weight);
+        assertEquals(expResult, result, 0.1);
+        
+        //test case #2
+        System.out.println("\tTest case #2");
+        
+        //input values for test case 2
+        height = 35;
+        weight = 30;
+        
+        expResult = -1;
+        result = instance.calcWaterStorageCapacity(height, weight);
+        assertEquals(expResult, result, 0.1);
+        
+        //test case #3
+        System.out.println("\tTest case #3");
+        
+        //input values for test case 3
+        height = 95;
+        weight = 271;
+        
+        expResult = -1;
+        result = instance.calcWaterStorageCapacity(height, weight);
+        assertEquals(expResult, result, 0.1);
+        
+        //test case #4
+        System.out.println("\tTest case #4");
+        
+        //input values for test case 4
+        height = 75;
+        weight = 29;
+        
+        expResult = -1;
+        result = instance.calcWaterStorageCapacity(height, weight);
+        assertEquals(expResult, result, 0.1);
+        
+        //test case #5
+        System.out.println("\tTest case #5");
+        
+        //input values for test case 5
+        height = 36;
+        weight = 36;
+        
+        expResult = 7.0;
+        result = instance.calcWaterStorageCapacity(height, weight);
+        assertEquals(expResult, result, 0.1);
+        
+        //test case #6
+        System.out.println("\tTest case #6");
+        
+        //input values for test case 6
+        height = 94;
+        weight = 270;
+        
+        expResult = 84.0;
+        result = instance.calcWaterStorageCapacity(height, weight);
+        assertEquals(expResult, result, 0.1);
+        
+        //test case #7
+        System.out.println("\tTest case #7");
+        
+        //input values for test case 7
+        height = 96;
+        weight = 30;
+        
+        expResult = 9.0;
+        result = instance.calcWaterStorageCapacity(height, weight);
+        assertEquals(expResult, result, 0.1);
+    }
+}

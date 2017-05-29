@@ -76,5 +76,18 @@ public class ActorControl {
  
         return finalHealth;
     }
-    
+ 
+    public double calcWaterStorageCapacity(int height, int weight) {
+        if (height < 36 || height > 96) // height is out of range
+	return -1;
+
+        else if (weight < 30 || weight > 270) // weight is out of range
+	return -1;
+
+	double bodyMass = (weight * 0.45) / ((height * 0.025) * (height * 0.025));
+	double waterStorageCapacity = Math.round((weight / 3.0) - (bodyMass / 4.0)); // Determine water storage based on weight on body mass
+
+        return waterStorageCapacity;
+
+    }
 }
