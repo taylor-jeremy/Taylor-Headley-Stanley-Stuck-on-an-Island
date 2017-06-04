@@ -31,6 +31,18 @@ public class GameControl {
     public static void createNewGame(Actor actor) {
         System.out.println("\n*** createNewGame stub function called ***");
     }
+
+    public static void createHelpMenu(Actor actor) {
+        System.out.println("\n*** createHelpMenu stub function called ***");
+    }
+
+    public static void startExistingGame(Actor actor) {
+        System.out.println("\n*** startExistingGame stub function called ***");
+    }
+
+    public static void restartGame(Actor actor) {
+        System.out.println("\n*** restartGame stub function called ***");
+    }
     }
     
 

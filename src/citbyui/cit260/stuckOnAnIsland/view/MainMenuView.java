@@ -103,15 +103,30 @@ public class MainMenuView {
     }
 
     private void startExistingGame() {
-        System.out.println("*** startExistingGame function called ***");
+        // creating existing game
+        GameControl.startExistingGame(StuckOnAnIsland.getActor());
+        
+        // display existing game menu
+        ExistingGameView existingGame = new ExistingGameView();
+        existingGame.displayMenu();
     }
 
     private void restartGame() {
-        System.out.println("*** restartGame function called ***");
+        // creating restart game
+        GameControl.restartGame(StuckOnAnIsland.getActor());
+        
+        // display restart game menu
+        RestartGameView restartMenu = new RestartGameView();
+        restartMenu.displayMenu();
     }
 
     private void displayHelpMenu() {
-        System.out.println("*** displayHelpMenu function called ***");
+         // create help menu
+        GameControl.createHelpMenu(StuckOnAnIsland.getActor());
+        
+        // display the help menu
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.displayMenu();
     }
         
 }
