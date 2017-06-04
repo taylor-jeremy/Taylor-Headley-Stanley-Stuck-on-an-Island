@@ -27,6 +27,10 @@ public class GameControl {
             
             return actor;
         }
+
+    public static void createNewGame(Actor actor) {
+        System.out.println("\n*** createNewGame stub function called ***");
+    }
     }
     
 

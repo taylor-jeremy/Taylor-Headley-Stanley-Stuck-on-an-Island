@@ -5,7 +5,9 @@
  */
 package citbyui.cit260.stuckOnAnIsland.view;
 
+import byui.cit260.stuckOnAnIsland.control.GameControl;
 import java.util.Scanner;
+import stuckonanisland.StuckOnAnIsland;
 
 /**
  *
@@ -47,20 +49,20 @@ public class MainMenuView {
     private String getMenuOption() {
         System.out.println(menu);
         
-        Scanner menuChoice = new Scanner(System.in); // get infile for keyboard
+        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; //initialize to not valid
         
         while (!valid) {
-            value = menuChoice.nextLine(); // get next line typed on keyboard
+            System.out.println("Please enter a menu option");
+            value = keyboard.nextLine(); // get next line typed on keyboard
             value = value.trim(); // trim off leading and trailing blanks
             
             if (value.length() < 1) {
                 System.out.println("\nInvalid value: please enter a menu option");
-                continue; 
+                continue;
             }
-            
-            break; // end the loop
+            valid = true;
                     
         }
         return value; // return the value entered
@@ -72,7 +74,6 @@ public class MainMenuView {
         
         switch (menuOption) {
             case "N": // create and start a new game
-                System.out.println("N");
                 this.startNewGame();
                 break;
             case "C": // get and continue existing game
@@ -80,8 +81,10 @@ public class MainMenuView {
                 break;
             case "R": // restart game (Might want to merge with startNewGame()?)
                 this.restartGame();
+                break;
             case "H": // get help on how to play the game
                 this.displayHelpMenu();
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -91,7 +94,12 @@ public class MainMenuView {
     }
 
     private void startNewGame() {
-        System.out.println("*** startNewGame function called ***");
+        // create game
+        GameControl.createNewGame(StuckOnAnIsland.getActor());
+        
+        // display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
     }
 
     private void startExistingGame() {
