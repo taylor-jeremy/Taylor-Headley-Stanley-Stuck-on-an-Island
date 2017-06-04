@@ -79,16 +79,16 @@ public class StartProgramView {
         return value; // return the value entered
     }
 
-    private boolean doAction(String ActorsName) {
+    private boolean doAction(String actorsName) {
        
-        if (ActorsName.length() <2) {
+        if (actorsName.length() < 2) {
             System.out.println("\nInvalid plyaers name: "
                     + "The name must be greater than one character in length");
             return false;
         }
         
         // call createPlayer() control function
-        Actor actor = GameControl.createActor(ActorsName);
+        Actor actor = GameControl.createActor(actorsName);
         
         if (actor == null) { // if unsuccessful
             System.out.println("\nError creating the player.");
@@ -96,15 +96,27 @@ public class StartProgramView {
         }
         
         //display next view
-        this.displayNextView();
+        this.displayNextView(actor);
         
         return true; // success!
     }
     
 
 
-    private void displayNextView() {
-        System.out.println("\n*** displayNextView() called***");
+    private void displayNextView(Actor actor) {
+        
+        // display custom welcome message
+        System.out.println("\n============================================="
+                          + "\n Welcome to the game " + actor.getName()
+                          + "\n We hope you have a lot of fun!"
+                          + "\n============================================"
+                          );
+        
+        //Create MainMenuView object
+        MainMenuView mainMenuView = new MainMenuView();
+        
+        // Display main menu view
+        mainMenuView.displayMainMenuView();
     }}
 
     
