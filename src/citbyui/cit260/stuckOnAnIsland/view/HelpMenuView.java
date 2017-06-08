@@ -19,7 +19,7 @@ public class HelpMenuView {
          boolean done = false; // set flag to not done
         
         do {
-            // prompt for and get actor's name
+            // prompt for and get menu option choice
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("Q")) // user wants to quit
                 return; // exit the game

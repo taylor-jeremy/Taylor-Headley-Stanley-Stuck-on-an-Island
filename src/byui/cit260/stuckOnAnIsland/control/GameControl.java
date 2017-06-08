@@ -37,7 +37,7 @@ public class GameControl {
     }
 
     public static void startExistingGame(Actor actor) {
-        System.out.println("\n*** startExistingGame stub function called ***");
+        System.out.println("\n*** startExistingGame stub function called. In the future, this will start the game. ***");
     }
 
     public static void restartGame(Actor actor) {

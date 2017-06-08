@@ -12,7 +12,8 @@ package citbyui.cit260.stuckOnAnIsland.view;
 public class GameMenuView {
 
     void displayMenu() {
-        System.out.println("\n*** displayMenu stub function called ***");
+        WaterStorageView waterStorageView = new WaterStorageView();
+        waterStorageView.displayWaterStorageView();
     }
     
 }

@@ -77,7 +77,13 @@ public class ActorControl {
         return finalHealth;
     }
  
-    public double calcWaterStorageCapacity(int height, int weight) {
+    /**
+     *
+     * @param height
+     * @param weight
+     * @return
+     */
+    public static double calcWaterStorageCapacity(int height, int weight) {
         if (height < 36 || height > 96) // height is out of range
 	return -1;
 

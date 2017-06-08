@@ -82,7 +82,7 @@ public class StartProgramView {
     private boolean doAction(String actorsName) {
        
         if (actorsName.length() < 2) {
-            System.out.println("\nInvalid plyaers name: "
+            System.out.println("\nInvalid players name: "
                     + "The name must be greater than one character in length");
             return false;
         }
@@ -105,12 +105,7 @@ public class StartProgramView {
 
     private void displayNextView(Actor actor) {
         
-        // display custom welcome message
-        System.out.println("\n============================================="
-                          + "\n Welcome to the game " + actor.getName()
-                          + "\n We hope you have a lot of fun!"
-                          + "\n============================================"
-                          );
+        
         
         //Create MainMenuView object
         MainMenuView mainMenuView = new MainMenuView();
