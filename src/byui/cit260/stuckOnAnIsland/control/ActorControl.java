@@ -11,10 +11,10 @@ package byui.cit260.stuckOnAnIsland.control;
  */
 public class ActorControl {
     
-        int finalHealth;
-        int finalEnergy;
+        static int finalHealth;
+        static int finalEnergy;
         
-    public int calcEnergy(int currentEnergy, int buildTools, int buildRaft, int moveLocation, int gatherResources, int eatFood, int drinkWater) {
+    public static int calcEnergy(int currentEnergy, int buildTools, int buildRaft, int moveLocation, int gatherResources, int eatFood, int drinkWater) {
     
         if (buildTools < 0 || buildTools > 100) {
             return -1;
@@ -52,25 +52,27 @@ public class ActorControl {
         return finalEnergy;
     }
     
-    public int calcHealth(int currentHealth, int energy, int time) {
+    public static int calcHealth(int currentHealth, int energy, int time) {
     
+        
+        
         if (energy < 0 || energy > 100) {
             return -1;
         }
  
-        if (time < 1 || time > 5) {
+        else if (time < 1 || time > 5) {
             return -1;
         }
                     
-        if (energy < 20) {
+        else if (energy < 20) {
             return Math.max(0, currentHealth - (30 * time));
         }
                     
-        if (energy < 50) {
+        else if (energy < 50) {
             return Math.max(0, currentHealth - (20 * time));
         }
             
-        if (energy >= 50) {
+        else if (energy >= 50) {
             return Math.min(100, currentHealth + (20 * time));
         }
  
