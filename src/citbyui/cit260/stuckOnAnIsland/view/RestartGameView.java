@@ -67,13 +67,13 @@ public class RestartGameView {
          menuOption = menuOption.toUpperCase(); // convert choice to upper case
         
         switch (menuOption) {
-            case "R": // Goal of Game
+            case "R": // Restart the Game
                 this.restartGame();
                 break;
-            case "C": // Fast Travel
+            case "C": // Continue and Return to the Game
                 this.continueGame();
                 break;
-            case "E": // Build Tools
+            case "E": // Exit and Save the Game
                 this.exitSaveGame();
                 break;      
             default:

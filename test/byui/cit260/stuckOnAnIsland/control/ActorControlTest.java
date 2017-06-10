@@ -127,6 +127,10 @@ public class ActorControlTest {
     @Test
     public void testCalcEnergy() {
         System.out.println("calcEnergy");
+        
+        //test case #1
+        System.out.println("\tTest case #1");
+        
         int currentEnergy = 100;
         int buildTools = 30;
         int buildRaft = 40;
