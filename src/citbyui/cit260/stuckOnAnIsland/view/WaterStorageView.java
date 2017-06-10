@@ -83,11 +83,10 @@ public class WaterStorageView {
     }
 
     private boolean doAction(String actorsHeight, String actorsWeight) {
-        String thirdInput = actorsHeight;
-        String fourthInput = actorsWeight;
+       
         
-        int height = Integer.parseInt(thirdInput); // convert actorsHeight to int
-        int weight = Integer.parseInt(fourthInput); // convert actorsWeight to int
+        int height = Integer.parseInt(actorsHeight); // convert actorsHeight to int
+        int weight = Integer.parseInt(actorsWeight); // convert actorsWeight to int
         
         double waterStorageCapacity;
         waterStorageCapacity = ActorControl.calcWaterStorageCapacity(height, weight);

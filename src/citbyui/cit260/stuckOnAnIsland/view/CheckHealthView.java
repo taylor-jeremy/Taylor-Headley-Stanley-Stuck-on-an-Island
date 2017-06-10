@@ -118,13 +118,9 @@ public class CheckHealthView {
 
     private boolean doAction(String actorsCurrentHealth, String actorsEnergy, String actorsTime) {
         
-        String healthInput = actorsCurrentHealth;
-        String energyInput = actorsEnergy; 
-        String timeInput = actorsTime; 
-        
-        int currentHealth = Integer.parseInt(healthInput); // convert actorsCurrentHealth to int
-        int energy = Integer.parseInt(energyInput); // convert actorsEnergy to int
-        int time = Integer.parseInt(timeInput); // convert actorsTime to int
+        int currentHealth = Integer.parseInt(actorsCurrentHealth); // convert actorsCurrentHealth to int
+        int energy = Integer.parseInt(actorsEnergy); // convert actorsEnergy to int
+        int time = Integer.parseInt(actorsTime); // convert actorsTime to int
         
         int health;
         health = ActorControl.calcHealth(currentHealth, energy, time);

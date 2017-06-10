@@ -46,7 +46,7 @@ public class ActorControl {
             return Math.min(100, finalEnergy);
         }
         
-        if (finalEnergy < 0) {
+        else if (finalEnergy < 0) {
             return Math.max(0, finalEnergy);
         }
         return finalEnergy;
