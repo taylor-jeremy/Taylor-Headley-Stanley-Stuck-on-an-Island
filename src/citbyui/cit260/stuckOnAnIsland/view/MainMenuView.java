@@ -38,7 +38,7 @@ public class MainMenuView extends View{
         
         
         value = value.toUpperCase(); // convert to all upper case
-        //menuOption = menuOption.toUpperCase(); // convert choice to upper case
+       
         
         switch (value) {
             case "N": // create and start a new game
@@ -76,7 +76,7 @@ public class MainMenuView extends View{
         
         // display existing game menu
         ExistingGameView existingGame = new ExistingGameView();
-        existingGame.displayMenu();
+        existingGame.display();
     }
 
     private void restartGame() {
@@ -85,7 +85,7 @@ public class MainMenuView extends View{
         
         // display restart game menu
         RestartGameView restartMenu = new RestartGameView();
-        restartMenu.displayMenu();
+        restartMenu.display();
     }
 
     private void displayHelpMenu() {
