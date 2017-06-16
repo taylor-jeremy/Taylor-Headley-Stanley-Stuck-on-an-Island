@@ -11,27 +11,10 @@ import java.util.Scanner;
  *
  * @author taylo
  */
-public class HelpMenuView {
-    
-    private String menu;
-
-    void displayMenu() {
-         boolean done = false; // set flag to not done
-        
-        do {
-            // prompt for and get menu option choice
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) // user wants to quit
-                return; // exit the game
-            
-            // do the request action and display the next view
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-    }
+public class HelpMenuView extends View {
     
     public HelpMenuView() {
-        this.menu = "\n"
+        super("\n"
                   + "\n-----------------------------------------"
                   + "\n| Help Menu                             |"
                   + "\n-----------------------------------------"
@@ -44,36 +27,14 @@ public class HelpMenuView {
                   + "\nE - How does energy work?"
                   + "\nH - How does helath work?"
                   + "\nQ - Quit"
-                  + "\n-----------------------------------------";
-    }
-    
-
-    private String getMenuOption() {
-        System.out.println(menu);
-        
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; //initialize to not valid
-        
-        while (!valid) {
-            System.out.println("Please enter a menu option");
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-            
-            if (value.length() < 1) {
-                System.out.println("\nInvalid value: please enter a menu option");
-                continue;
-            }
-            valid = true;
-                    
-        }
-        return value; // return the value entered
+                  + "\n-----------------------------------------");
     }
 
-    private boolean doAction(String menuOption) {
-         menuOption = menuOption.toUpperCase(); // convert choice to upper case
+    @Override
+    public boolean doAction(String value) {
+         value = value.toUpperCase(); // convert choice to upper case
         
-        switch (menuOption) {
+        switch (value) {
             case "G": // Goal of Game
                 this.goalOfGame();
                 break;
