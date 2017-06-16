@@ -13,28 +13,14 @@ import stuckonanisland.StuckOnAnIsland;
  *
  * @author taylo
  */
-public class MainMenuView {
+public class MainMenuView extends View{
     
-    private String menu;
 
-    void displayMainMenuView() {
-        
-        boolean done = false; // set flag to not done
-        
-        do {
-            // prompt for and get actor's name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) // user wants to quit
-                return; // exit the game
-            
-            // do the request action and display the next view
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-    }
+    
 
-    public MainMenuView() {
-        this.menu = "\n"
+                public MainMenuView() {
+                    
+                  super("\n"
                   + "\n-----------------------------------------"
                   + "\n| Main Menu                             |"
                   + "\n-----------------------------------------"
@@ -43,36 +29,18 @@ public class MainMenuView {
                   + "\nR - Restart game"
                   + "\nH - Get help on how to play the game"
                   + "\nQ - Quit"
-                  + "\n-----------------------------------------";
+                  + "\n-----------------------------------------");
     }
 
-    private String getMenuOption() {
-        System.out.println(menu);
+    
+    @Override            
+    public boolean doAction(String value) {
         
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; //initialize to not valid
         
-        while (!valid) {
-            System.out.println("Please enter a menu option");
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-            
-            if (value.length() < 1) {
-                System.out.println("\nInvalid value: please enter a menu option");
-                continue;
-            }
-            valid = true;
-                    
-        }
-        return value; // return the value entered
-    }
-
-    private boolean doAction(String menuOption) {
+        value = value.toUpperCase(); // convert to all upper case
+        //menuOption = menuOption.toUpperCase(); // convert choice to upper case
         
-        menuOption = menuOption.toUpperCase(); // convert choice to upper case
-        
-        switch (menuOption) {
+        switch (value) {
             case "N": // create and start a new game
                 this.startNewGame();
                 break;
