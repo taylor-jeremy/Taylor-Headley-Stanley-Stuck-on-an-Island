@@ -10,27 +10,12 @@ import java.util.Scanner;
  *
  * @author taylo
  */
-public class RestartGameView {
+public class RestartGameView extends View {
     
-    private String menu;
-
-    void displayMenu() {
-        boolean done = false; // set flag to not done
+    
+                  public RestartGameView() {
         
-        do {
-            // prompt for and get actor's name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) // user wants to quit
-                return; // exit the game
-            
-            // do the request action and display the next view
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-    }
-    
-    public RestartGameView() {
-        this.menu = "\n"
+                  super("\n"
                   + "\n-----------------------------------------"
                   + "\n| Restart Game Menu                             |"
                   + "\n-----------------------------------------"
@@ -38,35 +23,14 @@ public class RestartGameView {
                   + "\nC - Continue Game"
                   + "\nE - Exit and Save Game"
                   + "\nQ - Quit"
-                  + "\n-----------------------------------------";
+                  + "\n-----------------------------------------");
     }
 
-    private String getMenuOption() {
-         System.out.println(menu);
+   @Override
+   public boolean doAction(String value) {
+        value = value.toUpperCase(); // convert to all upper case
         
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; //initialize to not valid
-        
-        while (!valid) {
-            System.out.println("Please enter a menu option");
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-            
-            if (value.length() < 1) {
-                System.out.println("\nInvalid value: please enter a menu option");
-                continue;
-            }
-            valid = true;
-                    
-        }
-        return value; // return the value entered
-    }
-
-   private boolean doAction(String menuOption) {
-         menuOption = menuOption.toUpperCase(); // convert choice to upper case
-        
-        switch (menuOption) {
+        switch (value) {
             case "R": // Restart the Game
                 this.restartGame();
                 break;

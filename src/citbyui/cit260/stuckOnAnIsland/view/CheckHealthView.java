@@ -21,13 +21,13 @@ public class CheckHealthView {
 
     public CheckHealthView() {
     
-        this.promptCurrentHealth = "\nPlease enter your character's last "
+        promptCurrentHealth = "\nPlease enter your character's last "
                 + "calculated health:";
-        this.promptEnergy = "\nPlease enter your character's current energy:";
-        this.promptTime = "\nPlease enter the amount of time since you last "
+        promptEnergy = "\nPlease enter your character's current energy:";
+        promptTime = "\nPlease enter the amount of time since you last "
                 + "checked your health: ";
         
-        this.displayCheckHealthView();
+        displayCheckHealthView();
 
 }
 
