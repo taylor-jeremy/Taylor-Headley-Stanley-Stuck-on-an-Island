@@ -20,6 +20,7 @@ public class GameMenuView extends View {
                   + "\n-----------------------------------------"
                   + "\nW - Calculate your Water Storage Capacity?"
                   + "\nH - Check your Health?"
+                  + "\nT - Build Tools Menu"
                   + "\nQ - Quit"
                   + "\n-----------------------------------------");
     }
@@ -34,6 +35,9 @@ public class GameMenuView extends View {
                 break;
             case "H": // Fast Travel
                 this.calcHealth();
+                break;
+            case "T": // Tools Menu
+                this.buildTools();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -57,6 +61,11 @@ public class GameMenuView extends View {
     private void calcHealth() {
         CheckHealthView checkHealthView = new CheckHealthView();
         checkHealthView.displayCheckHealthView();
+    }
+
+    private void buildTools() {
+        BuildTools buildTools = new BuildTools();
+        buildTools.display();
     }
     
 }
