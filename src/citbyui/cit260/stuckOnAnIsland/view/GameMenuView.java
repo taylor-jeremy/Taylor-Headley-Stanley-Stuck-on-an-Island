@@ -21,6 +21,7 @@ public class GameMenuView extends View {
                   + "\nW - Calculate your Water Storage Capacity?"
                   + "\nH - Check your Health?"
                   + "\nT - Build Tools Menu"
+                  + "\nJ - Wreckage Inventory Menu"
                   + "\nQ - Quit"
                   + "\n-----------------------------------------");
     }
@@ -38,6 +39,9 @@ public class GameMenuView extends View {
                 break;
             case "T": // Tools Menu
                 this.buildTools();
+                break;
+            case "J": // Wreckage Inventory Menu
+                this.wreckageInventory();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -66,6 +70,11 @@ public class GameMenuView extends View {
     private void buildTools() {
         BuildTools buildTools = new BuildTools();
         buildTools.display();
+    }
+
+    private void wreckageInventory() {
+        WreckageInventoryMenuView wreckageInventory = new WreckageInventoryMenuView();
+        wreckageInventory.display();
     }
     
 }
