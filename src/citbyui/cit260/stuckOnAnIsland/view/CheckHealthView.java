@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author Ronnie-PC
  */
-public class CheckHealthView {
+public class CheckHealthView extends View{
     
     private String promptCurrentHealth;
     private String promptEnergy;
@@ -26,94 +26,21 @@ public class CheckHealthView {
         promptEnergy = "\nPlease enter your character's current energy:";
         promptTime = "\nPlease enter the amount of time since you last "
                 + "checked your health: ";
-        
-        displayCheckHealthView();
 
 }
 
-    void displayCheckHealthView() {
+    public void display() {
         
         //Get actors currentHealth, Energy, and Time. 
          boolean done = false; // set flag to not done
         do {
-            String actorsCurrentHealth = this.getActorsCurrentHealth(); 
-            String actorsEnergy = this.getActorsEnergy();
-            String actorsTime = this.getActorsTime();
+            String actorsCurrentHealth = getInput(promptCurrentHealth); 
+            String actorsEnergy = getInput(promptEnergy);
+            String actorsTime = getInput(promptTime);
             
             done = this.doAction(actorsCurrentHealth, actorsEnergy, actorsTime);
         } while(!done);
         
-    }
-
-    private String getActorsCurrentHealth() {
-       
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; //initialize to not valid
-        
-        while (!valid) {
-            System.out.println("\n" + this.promptCurrentHealth);
-            
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-            
-            if (value.length() < 1) {
-                System.out.println("\nInvalid value: height cannot be blank");
-                continue; 
-            }
-            
-            break; // end the loop
-     
-        }
-        
-        return value; // return the value entered
-    }
-
-    private String getActorsEnergy() {
-        
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; //initialize to not valid
-        
-        while (!valid) {
-            System.out.println("\n" + this.promptEnergy);
-            
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-            
-            if (value.length() < 1) {
-                System.out.println("\nInvalid value: height cannot be blank");
-                continue; 
-            }
-            
-            break; // end the loop
-     
-        }
-        
-        return value; // return the value entered
-    }
-
-    private String getActorsTime() {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; //initialize to not valid
-        
-        while (!valid) {
-            System.out.println("\n" + this.promptTime);
-            
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-            
-            if (value.length() < 1) {
-                System.out.println("\nInvalid value: height cannot be blank");
-                continue; 
-            }
-            
-            break; // end the loop
-     
-        }
-        
-        return value; // return the value entered
     }
 
     private boolean doAction(String actorsCurrentHealth, String actorsEnergy, String actorsTime) {

@@ -5,8 +5,6 @@
  */
 package citbyui.cit260.stuckOnAnIsland.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author taylo
@@ -59,12 +57,12 @@ public class GameMenuView extends View {
     
     private void calcWaterStorage() {
         WaterStorageView waterStorageView = new WaterStorageView();
-        waterStorageView.displayWaterStorageView();
+        waterStorageView.display();
     }
 
     private void calcHealth() {
         CheckHealthView checkHealthView = new CheckHealthView();
-        checkHealthView.displayCheckHealthView();
+        checkHealthView.display();
     }
 
     private void buildTools() {
