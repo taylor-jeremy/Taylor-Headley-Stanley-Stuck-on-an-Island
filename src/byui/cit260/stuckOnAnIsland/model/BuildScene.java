@@ -20,6 +20,8 @@ public class BuildScene implements Serializable{
     private String buildTools;
     private double energy;
     private double health;
+    
+    private ToolItem[] tool;
 
     public BuildScene() {
     }
@@ -64,6 +66,17 @@ public class BuildScene implements Serializable{
         this.health = health;
     }
 
+    public ToolItem[] getTool() {
+        return tool;
+    }
+
+    public void setTool(ToolItem[] tool) {
+        this.tool = tool;
+    }
+    
+    
+
+    
     @Override
     public int hashCode() {
         int hash = 3;

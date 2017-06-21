@@ -20,10 +20,22 @@ public class Map implements Serializable {
     private int columnCount;
     private int currentRow;
     private int currentColumn;
+    
+    private Location[] location;
 
     public Map() {
     }
 
+    public Location[] getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location[] location) {
+        this.location = location;
+    }
+
+    
+    
 
     
     public String getDescription() {

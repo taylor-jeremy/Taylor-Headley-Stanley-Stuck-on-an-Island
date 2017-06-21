@@ -18,6 +18,8 @@ public class Location implements Serializable{
     private int column;
     private String visited;
     private String available;
+    
+    private RegularSceneType[] regularSceneType;
 
     public Location() {
     }
@@ -53,6 +55,16 @@ public class Location implements Serializable{
     public void setAvailable(String available) {
         this.available = available;
     }
+
+    public RegularSceneType[] getRegularSceneType() {
+        return regularSceneType;
+    }
+
+    public void setRegularSceneType(RegularSceneType[] regularSceneType) {
+        this.regularSceneType = regularSceneType;
+    }
+    
+    
 
     @Override
     public int hashCode() {

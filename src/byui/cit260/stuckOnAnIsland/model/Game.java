@@ -17,6 +17,12 @@ public class Game implements Serializable {
     private double totalTime;
     private double score;
     
+    private Map map;
+    private Actor actor;
+    private ToolItem tool;
+    private Resource resource;
+   
+    
     public Game() {
     }
 
@@ -35,6 +41,42 @@ public class Game implements Serializable {
     public void setScore(double score) {
         this.score = score;
     }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public Actor getActor() {
+        return actor;
+    }
+
+    public void setActor(Actor actor) {
+        this.actor = actor;
+    }
+
+    public ToolItem getTool() {
+        return tool;
+    }
+
+    public void setTool(ToolItem tool) {
+        this.tool = tool;
+    }
+
+    public Resource getResource() {
+        return resource;
+    }
+
+    public void setResource(Resource resource) {
+        this.resource = resource;
+    }
+    
+    
+    
+    
 
 
     @Override

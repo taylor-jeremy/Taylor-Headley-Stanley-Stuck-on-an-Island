@@ -17,6 +17,10 @@ public class RegularSceneType implements Serializable {
     private String description;
     private double travelTime;
     private String symbol;
+    
+    private BuildScene buildScene;
+    private RaftScene raftScene;
+    private GatherScene gatherScene;
 
     public RegularSceneType() {
     }
@@ -44,6 +48,34 @@ public class RegularSceneType implements Serializable {
     public void setSymbol(String symbol) {
         this.symbol = symbol;
     }
+
+    public BuildScene getBuildScene() {
+        return buildScene;
+    }
+
+    public void setBuildScene(BuildScene buildScene) {
+        this.buildScene = buildScene;
+    }
+
+    public RaftScene getRaftScene() {
+        return raftScene;
+    }
+
+    public void setRaftScene(RaftScene raftScene) {
+        this.raftScene = raftScene;
+    }
+
+    public GatherScene getGatherScene() {
+        return gatherScene;
+    }
+
+    public void setGatherScene(GatherScene gatherScene) {
+        this.gatherScene = gatherScene;
+    }
+    
+    
+    
+    
 
     @Override
     public int hashCode() {

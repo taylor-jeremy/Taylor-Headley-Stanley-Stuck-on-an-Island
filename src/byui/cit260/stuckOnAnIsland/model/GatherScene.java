@@ -20,6 +20,8 @@ public class GatherScene implements Serializable{
     private String gatherResources;
     private double energy;
     private double health;
+    
+    private Resource[] resource;
 
     public GatherScene() {
     }
@@ -63,6 +65,18 @@ public class GatherScene implements Serializable{
     public void setHealth(double health) {
         this.health = health;
     }
+
+    public Resource[] getResource() {
+        return resource;
+    }
+
+    public void setResource(Resource[] resource) {
+        this.resource = resource;
+    }
+
+    
+    
+    
 
     @Override
     public int hashCode() {
