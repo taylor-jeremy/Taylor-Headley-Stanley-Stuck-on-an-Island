@@ -20,6 +20,10 @@ public class Location implements Serializable{
     private String available;
     
     private RegularSceneType[] regularSceneType;
+    private BuildScene buildScene;
+    private RaftScene raftScene;
+    private GatherScene[] gatherScene;
+    private Actor actor;
 
     public Location() {
     }
@@ -66,46 +70,10 @@ public class Location implements Serializable{
     
     
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 13 * hash + this.row;
-        hash = 13 * hash + this.column;
-        hash = 13 * hash + Objects.hashCode(this.visited);
-        hash = 13 * hash + Objects.hashCode(this.available);
-        return hash;
-    }
+    
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Location other = (Location) obj;
-        if (this.row != other.row) {
-            return false;
-        }
-        if (this.column != other.column) {
-            return false;
-        }
-        if (!Objects.equals(this.visited, other.visited)) {
-            return false;
-        }
-        if (!Objects.equals(this.available, other.available)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", available=" + available + '}';
+    public void setScene(RegularSceneType regularScene) {
+        System.out.println("stub function called");
     }
     
     

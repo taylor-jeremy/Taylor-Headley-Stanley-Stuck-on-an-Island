@@ -6,6 +6,7 @@
 package byui.cit260.stuckOnAnIsland.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -19,11 +20,14 @@ public class Game implements Serializable {
     
     private Map map;
     private Actor actor;
-    private ToolItem tool;
-    private Resource resource;
+    private ArrayList<ToolItem> tool;
+    private ArrayList<Resource> resources;
    
     
     public Game() {
+        resources = new ArrayList<Resource>();
+        tool = new ArrayList<ToolItem>(); 
+        
     }
 
     public double getTotalTime() {
@@ -58,21 +62,16 @@ public class Game implements Serializable {
         this.actor = actor;
     }
 
-    public ToolItem getTool() {
+    public ArrayList<ToolItem> getTool() {
         return tool;
     }
 
-    public void setTool(ToolItem tool) {
-        this.tool = tool;
+
+    public ArrayList<Resource> getResource() {
+        return resources;
     }
 
-    public Resource getResource() {
-        return resource;
-    }
-
-    public void setResource(Resource resource) {
-        this.resource = resource;
-    }
+    
     
     
     

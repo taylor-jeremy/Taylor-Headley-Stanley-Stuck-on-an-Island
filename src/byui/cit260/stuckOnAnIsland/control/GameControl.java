@@ -7,8 +7,10 @@ package byui.cit260.stuckOnAnIsland.control;
 
 import byui.cit260.stuckOnAnIsland.model.Actor;
 import byui.cit260.stuckOnAnIsland.model.Game;
-import byui.cit260.stuckOnAnIsland.model.Tool;
-import byui.cit260.stuckOnAnIsland.model.ToolItem;
+import byui.cit260.stuckOnAnIsland.model.Location;
+import byui.cit260.stuckOnAnIsland.model.Map;
+import byui.cit260.stuckOnAnIsland.model.RegularSceneType;
+import byui.cit260.stuckOnAnIsland.model.SceneType;
 import stuckonanisland.StuckOnAnIsland;
 
 /**
@@ -37,41 +39,20 @@ public class GameControl {
         StuckOnAnIsland.setCurrentGame(game); // save in StuckOnAnIsland
         
         game.setActor(actor); // save actor in game
+       
+        // this how you add a tool
+       // StuckOnAnIsland.getCurrentGame().getTool().add(ToolItem.Axe);
         
-        // create the inventory list and save in the game
-        ToolItem[] toolList = GameControl.createToolList();
-        game.setTool(toolList);
-        
-        Resource[] resourceList = GameControl.createResourceList();
-        game.setResource(resourceList);
-        
-        RaftScene raftScene = new RaftScene(); // create new raft
-        game.setRaftScene(raftScene); // save raft in game
         
         Map map = MapControl.createMap(); // create and initailize the new map
         game.setMap(map); // save map in game
         
         //move actors to starting poistion in the map
         MapControl.moveActorsToStartingLocation(map);
-        
+         
     }
-    
-    public static ToolItem[] createToolList() {
-        
-        ToolItem[] tool = new ToolItem[2];
-        
-        ToolItem Axe = new ToolItem();
-        Axe.setDescription("Axe");
-        Axe.setQuantityInStock(0);
-        Axe.setRequiredAmount(0);
-        tool[Tool.Axe.ordinal()] = Axe;
-                
-        
-        
-        
-        
-    
-    }
+
+   
 
     public static void createHelpMenu(Actor actor) {
         System.out.println("\n*** createHelpMenu stub function called ***");
@@ -84,6 +65,18 @@ public class GameControl {
     public static void restartGame(Actor actor) {
         System.out.println("\n*** restartGame stub function called ***");
     }
+
+    static void assignScenesToLocations(Map map, RegularSceneType[] regularScenes) {
+        
+        Location[] locations = map.getLocations();
+        
+        // start point
+        locations[0].setScene(regularScenes[SceneType.homeCamp.ordinal()]);
+        locations[1].setScene(regularScenes[SceneType.beach.ordinal()]);
+        
+    }
+
+    
     }
     
 

@@ -21,17 +21,52 @@ public class Map implements Serializable {
     private int currentRow;
     private int currentColumn;
     
-    private Location[] location;
+    private Location[] locations;
 
     public Map() {
     }
+    
 
-    public Location[] getLocation() {
-        return location;
+     public void display() {
+        
+    
+        
+        /*if (rowCount < 1 | columnCount < 1) {
+            System.out.println("The number of rows and columns must be > zero");
+            return;
+        }
+        
+        this.rowCount = rowCount;
+        this.columnCount = columnCount;
+        */
+         
+        // print out the Locations on the map
+        
+        System.out.println("\n"
+                                + "\n-----------------------------------------"
+                                + "\n| Map Locations                             |"
+                                + "\n-----------------------------------------"
+                                + "\n - Ship Wreckage"
+                                + "\n - Home Camp"
+                                + "\n - Beach"
+                                + "\n - Raft Location"
+                                + "\n - Tool Building Shop"
+                                + "\n - Vegetable Forrest"
+                                + "\n - Fruit Forrest"
+                                + "\n - Mountain Range"
+                                + "\n - Rain Forrest"
+                                + "\n - Fresh Water Creek"
+                                + "\n - Cave"
+                                + "\n-----------------------------------------");
+       
+    }
+
+    public Location[] getLocations() {
+        return locations;
     }
 
     public void setLocation(Location[] location) {
-        this.location = location;
+        this.locations = location;
     }
 
     
@@ -78,6 +113,13 @@ public class Map implements Serializable {
         this.currentColumn = currentColumn;
     }
 
+    
+    
+    
+    
+    
+    
+    //no longer needed
     @Override
     public int hashCode() {
         int hash = 3;
@@ -123,6 +165,8 @@ public class Map implements Serializable {
         }
         return true;
     }
-    
+
+   
+
     
 }
