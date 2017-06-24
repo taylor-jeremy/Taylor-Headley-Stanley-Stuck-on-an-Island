@@ -5,6 +5,12 @@
  */
 package byui.cit260.stuckOnAnIsland.control;
 
+import byui.cit260.stuckOnAnIsland.model.City1Scene;
+import byui.cit260.stuckOnAnIsland.model.City2Scene;
+import byui.cit260.stuckOnAnIsland.model.City3Scene;
+import byui.cit260.stuckOnAnIsland.model.City4Scene;
+import byui.cit260.stuckOnAnIsland.model.City5Scene;
+import byui.cit260.stuckOnAnIsland.model.Location;
 import byui.cit260.stuckOnAnIsland.model.Map;
 import byui.cit260.stuckOnAnIsland.model.RegularSceneType;
 import byui.cit260.stuckOnAnIsland.model.SceneType;
@@ -19,20 +25,35 @@ public class MapControl {
         
         // create the map
         Map map = new Map();
+        Location[] locations = new Location[5];
         
-        // create the scenes for the game
-        RegularSceneType[] regularScenes = createScenes();
+        locations[0] = new Location("City1");
+        locations[1] = new Location("City2");
+        locations[2] = new Location("Ciyt3");
+        locations[3] = new Location("City4");
+        locations[4] = new Location("City5");
         
-        // assign scenes to locations
-        GameControl.assignScenesToLocations(map, regularScenes);
-        
-        return map;   
+        map.setLocations(locations);
+                
+        assignScenesToLocations(locations);
+        return map;
+       
+    }
+    
+    private static void assignScenesToLocations(Location[] locations) {
+        locations[0].setRegularSceneType(new City1Scene());
+        locations[1].setRegularSceneType(new City2Scene());
+        locations[2].setRegularSceneType(new City3Scene()); 
+        locations[3].setRegularSceneType(new City4Scene()); 
+        locations[4].setRegularSceneType(new City5Scene()); 
     }
 
-    static void moveActorsToStartingLocation(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    /*static void moveActorsToStartingLocation(Map map) {
+        System.out.println("stub function called moveActorsToStartingLocation");
+    }*/
 
+    
+    /*
     private static RegularSceneType[] createScenes() {
         
         RegularSceneType[] regularScenes = new RegularSceneType[SceneType.values().length];
@@ -61,5 +82,8 @@ public class MapControl {
         
         return regularScenes;
     }
+*/
+
+    
     
 }

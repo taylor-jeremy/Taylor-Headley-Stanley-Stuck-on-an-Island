@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author Ronnie-PC
  */
-public class RegularSceneType implements Serializable {
+public abstract class RegularSceneType implements Serializable {
     
     // class instance variables
     private String description;
@@ -19,41 +19,29 @@ public class RegularSceneType implements Serializable {
     private String symbol;
     
 
-    public RegularSceneType() {
+    public RegularSceneType(String description) {
+        this.description = description;
     }
 
     public String getDescription() {
         return description;
     }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public double getTravelTime() {
-        return travelTime;
-    }
-
-    public void setTravelTime(double travelTime) {
-        this.travelTime = travelTime;
-    }
-
-    public String getSymbol() {
-        return symbol;
-    }
-
-    public void setSymbol(String symbol) {
-        this.symbol = symbol;
-    }
-
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
 }
+
+  
+
+    
+
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+

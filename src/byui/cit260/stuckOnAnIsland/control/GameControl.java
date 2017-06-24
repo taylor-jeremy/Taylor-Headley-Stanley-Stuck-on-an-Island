@@ -44,12 +44,18 @@ public class GameControl {
        // StuckOnAnIsland.getCurrentGame().getTool().add(ToolItem.Axe);
         
         
-        Map map = MapControl.createMap(); // create and initailize the new map
-        game.setMap(map); // save map in game
+        createMap(game); // create and initailize the new map
+         // save map in game
         
         //move actors to starting poistion in the map
-        MapControl.moveActorsToStartingLocation(map);
+        //MapControl.moveActorsToStartingLocation(map);
+        
          
+    }
+    
+    public static void createMap(Game game){
+        Map map = MapControl.createMap();
+        game.setMap(map);
     }
 
    
@@ -66,17 +72,17 @@ public class GameControl {
         System.out.println("\n*** restartGame stub function called ***");
     }
 
-    static void assignScenesToLocations(Map map, RegularSceneType[] regularScenes) {
+    /*static void assignScenesToLocations(Map map, RegularSceneType[] regularScenes) {
         
         Location[] locations = map.getLocations();
         
         // start point
         locations[0].setScene(regularScenes[SceneType.homeCamp.ordinal()]);
         locations[1].setScene(regularScenes[SceneType.beach.ordinal()]);
-        
+        */
     }
 
     
-    }
+    
     
 

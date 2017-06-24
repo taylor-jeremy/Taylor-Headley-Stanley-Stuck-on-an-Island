@@ -8,6 +8,7 @@ package citbyui.cit260.stuckOnAnIsland.view;
 import byui.cit260.stuckOnAnIsland.model.Game;
 import byui.cit260.stuckOnAnIsland.model.Map;
 import byui.cit260.stuckOnAnIsland.model.Resource;
+import byui.cit260.stuckOnAnIsland.model.ToolItem;
 import java.util.ArrayList;
 import stuckonanisland.StuckOnAnIsland;
 
@@ -23,7 +24,10 @@ public class GameMenuView extends View {
                   + "\n| Game Menu                             |"
                   + "\n-----------------------------------------"
                   + "\nW - Calculate your Water Storage Capacity?"
+                  + "\nM - Display Map" 
                   + "\nH - Check your Health?"
+                  + "\nR - View list of Resources"
+                  + "\nL - View list of Tools"
                   + "\nT - Build Tools Menu"
                   + "\nJ - Wreckage Inventory Menu"
                   + "\nQ - Quit"
@@ -33,17 +37,19 @@ public class GameMenuView extends View {
     @Override
     public boolean doAction(String value) {
         value = value.toUpperCase(); // convert choice to upper case
-        
         switch (value) {
-            case "M": // dislay Map
-                this.dislpayMap();
-                break;
-            case "W": // Goal of Game
+            case "W": // Water Storage
                 this.calcWaterStorage();
                 break;
+            case "M": // Display Map
+                this.displayMap();
+                break;    
             case "R": // View List of Resources
                 this.viewResource();
                 break;
+            case "L": // View List of Tools
+                this.viewTools();
+                break;    
             case "H": // Fast Travel
                 this.calcHealth();
                 break;
@@ -67,6 +73,12 @@ public class GameMenuView extends View {
        // waterStorageView.displayWaterStorageView();
     //}
     
+     private void displayMap() {
+        MapView mapView = new MapView();
+        mapView.displayMap();
+       
+    }
+    
     private void calcWaterStorage() {
         WaterStorageView waterStorageView = new WaterStorageView();
         waterStorageView.display();
@@ -88,7 +100,29 @@ public class GameMenuView extends View {
     }
 
     private void viewResource() {
-        StringBuilder line;
+        
+        Resource[] items = Resource.values();
+        
+        for (Resource item : items) {
+            System.out.println(item);
+        }
+    }
+    
+     private void viewTools() {
+       
+         ToolItem[] items = ToolItem.values();
+         
+         for (ToolItem item : items) {
+             System.out.println(item);
+         }
+    }
+        
+        
+        
+        
+        
+        
+        /*StringBuilder line;
         
         Game game = StuckOnAnIsland.getCurrentGame();
         ArrayList<Resource> resource = game.getResource();
@@ -108,11 +142,11 @@ public class GameMenuView extends View {
         }
         
         
-    }
+    }*/
 
-    private void dislpayMap() {
-        Map map = new Map();
-        map.display();
-    }
-    
+   
+
+   
 }
+
+  

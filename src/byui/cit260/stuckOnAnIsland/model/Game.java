@@ -49,9 +49,9 @@ public class Game implements Serializable {
     public Map getMap() {
         return map;
     }
-
-    public void setMap(Map map) {
-        this.map = map;
+    
+    public void setMap(Map newMap) {
+        map = newMap;
     }
 
     public Actor getActor() {
@@ -72,45 +72,11 @@ public class Game implements Serializable {
     }
 
     
-    
-    
-    
+ 
+
     
 
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 13 * hash + (int) (Double.doubleToLongBits(this.totalTime) ^ (Double.doubleToLongBits(this.totalTime) >>> 32));
-        hash = 13 * hash + (int) (Double.doubleToLongBits(this.score) ^ (Double.doubleToLongBits(this.score) >>> 32));
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Game other = (Game) obj;
-        if (Double.doubleToLongBits(this.totalTime) != Double.doubleToLongBits(other.totalTime)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.score) != Double.doubleToLongBits(other.score)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Game{" + "totalTime=" + totalTime + ", score=" + score + '}';
-    }
+   
     
     
 }

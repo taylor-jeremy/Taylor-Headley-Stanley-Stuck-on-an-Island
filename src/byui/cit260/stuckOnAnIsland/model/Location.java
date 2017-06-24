@@ -14,12 +14,9 @@ import java.util.Objects;
 public class Location implements Serializable{
     
     // class instance variables
-    private int row;
-    private int column;
-    private String visited;
-    private String available;
+    private String name;
+    private RegularSceneType regularScene;
     
-    private RegularSceneType[] regularSceneType;
     private BuildScene buildScene;
     private RaftScene raftScene;
     private GatherScene[] gatherScene;
@@ -27,57 +24,28 @@ public class Location implements Serializable{
 
     public Location() {
     }
-
-    public int getRow() {
-        return row;
-    }
-
-    public void setRow(int row) {
-        this.row = row;
-    }
-
-    public int getColumn() {
-        return column;
-    }
-
-    public void setColumn(int column) {
-        this.column = column;
-    }
-
-    public String getVisited() {
-        return visited;
-    }
-
-    public void setVisited(String visited) {
-        this.visited = visited;
-    }
-
-    public String getAvailable() {
-        return available;
-    }
-
-    public void setAvailable(String available) {
-        this.available = available;
-    }
-
-    public RegularSceneType[] getRegularSceneType() {
-        return regularSceneType;
-    }
-
-    public void setRegularSceneType(RegularSceneType[] regularSceneType) {
-        this.regularSceneType = regularSceneType;
+    
+    public Location(String locationName) {
+        name = locationName;
     }
     
-    
-
-    
-
-    public void setScene(RegularSceneType regularScene) {
-        System.out.println("stub function called");
+    public String getName() {
+        return name;
     }
-    
-    
-    
-    
-    
+
+
+    public RegularSceneType getRegularSceneType() {
+        return regularScene;
+    }
+
+    public void setRegularSceneType(RegularSceneType locationScene) {
+        this.regularScene = locationScene;
+    }
+
+   
+
+   
+
+  
+       
 }
