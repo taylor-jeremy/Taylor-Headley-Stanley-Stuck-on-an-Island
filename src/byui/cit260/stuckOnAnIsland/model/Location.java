@@ -22,8 +22,6 @@ public class Location implements Serializable{
     private GatherScene[] gatherScene;
     private Actor actor;
 
-    public Location() {
-    }
     
     public Location(String locationName) {
         name = locationName;
