@@ -23,6 +23,7 @@ public class GameMenuView extends View {
                   + "\n-----------------------------------------"
                   + "\n| Game Menu                             |"
                   + "\n-----------------------------------------"
+                  + "\nI - View your Inventory"
                   + "\nW - Calculate your Water Storage Capacity?"
                   + "\nM - Display Map" 
                   + "\nH - Check your Health?"
@@ -38,6 +39,9 @@ public class GameMenuView extends View {
     public boolean doAction(String value) {
         value = value.toUpperCase(); // convert choice to upper case
         switch (value) {
+            case "I": // Water Storage
+                this.viewInventory();
+                break;
             case "W": // Water Storage
                 this.calcWaterStorage();
                 break;
@@ -116,6 +120,19 @@ public class GameMenuView extends View {
              System.out.println(item);
          }
     }
+     
+      private void viewInventory() {
+        
+          int fruitCount = 0;
+          int vegetableCount = 0;
+          
+          for (Resource item: StuckOnAnIsland.getCurrentGame().getResource()) {
+              if (item == Resource.Fruit) {
+                  fruitCount++;
+              }
+    }
+          System.out.println("You have " + fruitCount + " fruit.");
+          System.out.println("You have " + vegetableCount + " vegetable.");
         
         
         
@@ -147,6 +164,8 @@ public class GameMenuView extends View {
    
 
    
-}
+
+   
+}}
 
   

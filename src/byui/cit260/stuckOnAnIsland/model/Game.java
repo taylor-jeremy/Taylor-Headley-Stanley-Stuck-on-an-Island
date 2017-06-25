@@ -29,6 +29,15 @@ public class Game implements Serializable {
         tool = new ArrayList<ToolItem>(); 
         
     }
+    
+     public ArrayList<ToolItem> getTool() {
+        return tool;
+    }
+
+
+    public ArrayList<Resource> getResource() {
+        return resources;
+    }
 
     public double getTotalTime() {
         return totalTime;
@@ -61,22 +70,7 @@ public class Game implements Serializable {
     public void setActor(Actor actor) {
         this.actor = actor;
     }
-
-    public ArrayList<ToolItem> getTool() {
-        return tool;
-    }
-
-
-    public ArrayList<Resource> getResource() {
-        return resources;
-    }
-
-    
- 
-
     
 
-   
-    
     
 }

@@ -10,6 +10,7 @@ import byui.cit260.stuckOnAnIsland.model.Game;
 import byui.cit260.stuckOnAnIsland.model.Location;
 import byui.cit260.stuckOnAnIsland.model.Map;
 import byui.cit260.stuckOnAnIsland.model.RegularSceneType;
+import byui.cit260.stuckOnAnIsland.model.Resource;
 import byui.cit260.stuckOnAnIsland.model.SceneType;
 import stuckonanisland.StuckOnAnIsland;
 
@@ -38,6 +39,15 @@ public class GameControl {
         Game game = new Game(); //create new game
         StuckOnAnIsland.setCurrentGame(game); // save in StuckOnAnIsland
         
+        InventoryControl.addResource(Resource.Fruit);
+        InventoryControl.addResource(Resource.Fruit);
+        InventoryControl.addResource(Resource.Fruit);
+        InventoryControl.addResource(Resource.Fruit);
+        
+        InventoryControl.addResource(Resource.Vegetables);
+        InventoryControl.addResource(Resource.Vegetables);
+        
+        
         game.setActor(actor); // save actor in game
        
         // this how you add a tool
@@ -49,6 +59,8 @@ public class GameControl {
         
         //move actors to starting poistion in the map
         //MapControl.moveActorsToStartingLocation(map);
+        
+        
         
          
     }
