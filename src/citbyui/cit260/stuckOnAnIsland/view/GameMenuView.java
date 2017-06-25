@@ -125,14 +125,37 @@ public class GameMenuView extends View {
         
           int fruitCount = 0;
           int vegetableCount = 0;
+          int waterCount = 0;
+          int woodCount = 0;
+          int vinesCount = 0;
+          int ropeCount = 0;
           
           for (Resource item: StuckOnAnIsland.getCurrentGame().getResource()) {
               if (item == Resource.Fruit) {
                   fruitCount++;
               }
+              else if (item == Resource.Vegetables) {
+                  vegetableCount++;
+              }
+              else if (item == Resource.Water) {
+                  waterCount++;
+              }
+              else if (item == Resource.Wood) {
+                  woodCount++;
+              }
+              else if (item == Resource.Vines) {
+                  vinesCount++;
+              }
+              else if (item == Resource.Rope) {
+                  ropeCount++;
+              }
     }
           System.out.println("You have " + fruitCount + " fruit.");
           System.out.println("You have " + vegetableCount + " vegetable.");
+          System.out.println("You have " + waterCount + " water.");
+          System.out.println("You have " + woodCount + " wood.");
+          System.out.println("You have " + vinesCount + " vine.");
+          System.out.println("You have " + ropeCount + " rope.");
         
         
         

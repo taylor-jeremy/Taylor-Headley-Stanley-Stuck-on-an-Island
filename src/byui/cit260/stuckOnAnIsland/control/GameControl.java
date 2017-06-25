@@ -47,6 +47,21 @@ public class GameControl {
         InventoryControl.addResource(Resource.Vegetables);
         InventoryControl.addResource(Resource.Vegetables);
         
+        InventoryControl.addResource(Resource.Water);
+        
+        InventoryControl.addResource(Resource.Wood);
+        InventoryControl.addResource(Resource.Wood);
+        InventoryControl.addResource(Resource.Wood);
+        
+        InventoryControl.addResource(Resource.Vines);
+        InventoryControl.addResource(Resource.Vines);
+        InventoryControl.addResource(Resource.Vines);
+        InventoryControl.addResource(Resource.Vines);
+        InventoryControl.addResource(Resource.Vines);
+        
+        InventoryControl.addResource(Resource.Rope);
+        InventoryControl.addResource(Resource.Rope);
+        
         
         game.setActor(actor); // save actor in game
        
