@@ -6,7 +6,10 @@
 package citbyui.cit260.stuckOnAnIsland.view;
 
 import byui.cit260.stuckOnAnIsland.control.ActorControl;
+import byui.cit260.stuckOnAnIsland.exceptions.ActorControlException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -29,23 +32,42 @@ public class WaterStorageView extends View{
         do {
             String actorsHeight = getInput(promptHeight); // get actor's weight and height
             String actorsWeight = getInput(promptWeight);
-            
             done = this.doAction(actorsHeight, actorsWeight);
         } while(!done);
         
     }
 
-    private boolean doAction(String actorsHeight, String actorsWeight) {
+    public boolean doAction(String actorsHeight, String actorsWeight) {
        
+       int height = 0;
+       int weight = 0;
         
-        int height = Integer.parseInt(actorsHeight); // convert actorsHeight to int
-        int weight = Integer.parseInt(actorsWeight); // convert actorsWeight to int
-        
-        double waterStorageCapacity;
-        waterStorageCapacity = ActorControl.calcWaterStorageCapacity(height, weight);
-        
-        this.displayNextView(waterStorageCapacity); // display next view
-        
+        try {
+            try {
+            height = Integer.parseInt(actorsHeight); // convert actorsHeight to int
+            
+            } catch (NumberFormatException nfe) {
+                System.out.println("\nYou must enter a valid number. Try again.");
+                return false;
+            }
+            
+            try{
+            weight = Integer.parseInt(actorsWeight); // convert actorsWeight to int
+            
+            } catch (NumberFormatException nfe) {
+                System.out.println("\nYou must enter a valid number. Try again.");
+                return false;
+            }
+            
+            double waterStorageCapacity;
+            waterStorageCapacity = ActorControl.calcWaterStorageCapacity(height, weight);
+            
+            this.displayNextView(waterStorageCapacity); // display next view
+            
+        } catch (ActorControlException ace) {
+            System.out.println(ace.getMessage());
+            return false;
+        }
         return true; // success!
     }
 

@@ -5,6 +5,8 @@
  */
 package byui.cit260.stuckOnAnIsland.control;
 
+import byui.cit260.stuckOnAnIsland.exceptions.ActorControlException;
+
 /**
  *
  * @author Ronnie-PC
@@ -84,13 +86,16 @@ public class ActorControl {
      * @param height
      * @param weight
      * @return
+     * @throws byui.cit260.stuckOnAnIsland.exceptions.ActorControlException
      */
-    public static double calcWaterStorageCapacity(int height, int weight) {
+    public static double calcWaterStorageCapacity(int height, int weight) throws ActorControlException {
         if (height < 36 || height > 96) // height is out of range
-	return -1;
+	throw new ActorControlException("Cannot set actor to height of " + 
+                height + " inches because that height is outside the range of 36-96 inches");
 
         else if (weight < 30 || weight > 270) // weight is out of range
-	return -1;
+	throw new ActorControlException("Cannot set actor to weight of " + 
+                weight + " pounds because that weight is outside the range of 30-270 pounds");
 
 	double bodyMass = (weight * 0.45) / ((height * 0.025) * (height * 0.025));
 	double waterStorageCapacity = Math.round((weight / 3.0) - (bodyMass / 4.0)); // Determine water storage based on weight on body mass

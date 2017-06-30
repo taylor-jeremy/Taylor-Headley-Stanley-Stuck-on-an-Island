@@ -48,7 +48,14 @@ public class StuckOnAnIsland {
     public static void main(String[] args) {
         
         StartProgramView startProgramView = new StartProgramView();
+        try {
         startProgramView.displayStartProgramView();
+        
+        } catch (Throwable te) {
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgramView.displayStartProgramView();
+        }
     }
     
 }
