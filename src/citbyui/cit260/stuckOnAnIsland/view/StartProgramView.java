@@ -6,8 +6,11 @@
 package citbyui.cit260.stuckOnAnIsland.view;
 
 import byui.cit260.stuckOnAnIsland.control.GameControl;
+import byui.cit260.stuckOnAnIsland.exceptions.GameControlException;
 import byui.cit260.stuckOnAnIsland.model.Actor;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -81,23 +84,22 @@ public class StartProgramView {
 
     private boolean doAction(String actorsName) {
        
-        if (actorsName.length() < 2) {
-            System.out.println("\nInvalid players name: "
-                    + "The name must be greater than one character in length");
-            return false;
+        try {
+            if (actorsName.length() < 2) {
+                System.out.println("\nInvalid players name: "
+                        + "The name must be greater than one character in length");
+                return false;
+            }
+            
+            // call createPlayer() control function
+            Actor actor = GameControl.createActor(actorsName);
+            
+            //display next view
+            this.displayNextView(actor);
+            
+        } catch (GameControlException ex) {
+            Logger.getLogger(StartProgramView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        // call createPlayer() control function
-        Actor actor = GameControl.createActor(actorsName);
-        
-        if (actor == null) { // if unsuccessful
-            System.out.println("\nError creating the player.");
-            return false;
-        }
-        
-        //display next view
-        this.displayNextView(actor);
-        
         return true; // success!
     }
     

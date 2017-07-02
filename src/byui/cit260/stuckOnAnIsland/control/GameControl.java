@@ -5,6 +5,7 @@
  */
 package byui.cit260.stuckOnAnIsland.control;
 
+import byui.cit260.stuckOnAnIsland.exceptions.GameControlException;
 import byui.cit260.stuckOnAnIsland.model.Actor;
 import byui.cit260.stuckOnAnIsland.model.Game;
 import byui.cit260.stuckOnAnIsland.model.Location;
@@ -20,10 +21,10 @@ import stuckonanisland.StuckOnAnIsland;
  */
 public class GameControl {
 
-    public static Actor createActor(String name) {
+    public static Actor createActor(String name) throws GameControlException {
             
             if (name == null) {
-                return null;
+                throw new GameControlException("Cannot create actor name with a null value.");
             }
             
             Actor actor = new Actor();

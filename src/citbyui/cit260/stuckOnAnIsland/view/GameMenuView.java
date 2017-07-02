@@ -26,6 +26,7 @@ public class GameMenuView extends View {
                   + "\nI - View your Inventory"
                   + "\nW - Calculate your Water Storage Capacity?"
                   + "\nM - Display Map" 
+                  + "\nE - Check your energy?"
                   + "\nH - Check your Health?"
                   + "\nR - View list of Resources"
                   + "\nL - View list of Tools"
@@ -54,7 +55,10 @@ public class GameMenuView extends View {
             case "L": // View List of Tools
                 this.viewTools();
                 break;    
-            case "H": // Fast Travel
+            case "E": // Calculate Energy Menu
+                this.calcEnergy();
+                break;
+            case "H": // Calculate Health Menu
                 this.calcHealth();
                 break;
             case "T": // Tools Menu
@@ -86,6 +90,11 @@ public class GameMenuView extends View {
     private void calcWaterStorage() {
         WaterStorageView waterStorageView = new WaterStorageView();
         waterStorageView.display();
+    }
+    
+    private void calcEnergy() {
+        CheckEnergyView checkEnergyView = new CheckEnergyView();
+        checkEnergyView.display();
     }
 
     private void calcHealth() {

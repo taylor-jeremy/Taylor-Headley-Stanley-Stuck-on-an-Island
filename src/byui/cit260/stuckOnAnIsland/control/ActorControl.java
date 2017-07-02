@@ -16,30 +16,37 @@ public class ActorControl {
         static int finalHealth;
         static int finalEnergy;
         
-    public static int calcEnergy(int currentEnergy, int buildTools, int buildRaft, int moveLocation, int gatherResources, int eatFood, int drinkWater) {
+    public static int calcEnergy(int currentEnergy, int buildTools, int buildRaft, int moveLocation, int gatherResources, int eatFood, int drinkWater) 
+    throws ActorControlException{
     
         if (buildTools < 0 || buildTools > 100) {
-            return -1;
+            throw new ActorControlException("Cannot set buildTools to " + buildTools +
+                    " because it is not in the range of 0-100");
         }
         
         if (buildRaft < 0 || buildRaft > 100) {
-            return -1;
+            throw new ActorControlException("Cannot set buildRaft to " + buildRaft +
+                    " because it is not in the range of 0-100");
         }
         
         if (moveLocation < 0 || moveLocation > 100) {
-            return -1;
+            throw new ActorControlException("Cannot set moveLocation to " + moveLocation +
+                    " because it is not in the range of 0-100");
         }
         
         if (gatherResources < 0 || gatherResources > 100) {
-            return -1;
+            throw new ActorControlException("Cannot set gatherResources to " + gatherResources +
+                    " because it is not in the range of 0-100");
         }
         
         if (eatFood < 0 || eatFood > 100) {
-            return -1;
+            throw new ActorControlException("Cannot set eatFood to " + eatFood +
+                    " because it is not in the range of 0-100");
         }
         
         if (drinkWater < 0 || drinkWater > 100) {
-            return -1;
+            throw new ActorControlException("Cannot set drinkWater to " + drinkWater +
+                    " because it is not in the range of 0-100");
         }
         
         finalEnergy = (currentEnergy - buildTools - buildRaft - moveLocation - gatherResources + eatFood + drinkWater);
