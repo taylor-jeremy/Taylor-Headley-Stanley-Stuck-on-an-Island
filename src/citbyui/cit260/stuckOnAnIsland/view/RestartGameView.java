@@ -41,7 +41,7 @@ public class RestartGameView extends View {
                 this.exitSaveGame();
                 break;      
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         
@@ -50,15 +50,15 @@ public class RestartGameView extends View {
     }
 
     private void restartGame() {
-         System.out.println("\n*** restartGame stub function called ***");
+         this.console.println("\n*** restartGame stub function called ***");
     }
 
     private void continueGame() {
-        System.out.println("\n*** continueGame stub function called ***");
+        this.console.println("\n*** continueGame stub function called ***");
     }
 
     private void exitSaveGame() {
-         System.out.println("\n*** exitSaveGame stub function called ***");
+         this.console.println("\n*** exitSaveGame stub function called ***");
     }
     
 }

@@ -68,7 +68,7 @@ public class GameMenuView extends View {
                 this.wreckageInventory();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         
@@ -117,7 +117,7 @@ public class GameMenuView extends View {
         Resource[] items = Resource.values();
         
         for (Resource item : items) {
-            System.out.println(item);
+            this.console.println(item);
         }
     }
     
@@ -126,7 +126,7 @@ public class GameMenuView extends View {
          ToolItem[] items = ToolItem.values();
          
          for (ToolItem item : items) {
-             System.out.println(item);
+             this.console.println(item);
          }
     }
      
@@ -159,12 +159,12 @@ public class GameMenuView extends View {
                   ropeCount++;
               }
     }
-          System.out.println("You have " + fruitCount + " fruit.");
-          System.out.println("You have " + vegetableCount + " vegetable.");
-          System.out.println("You have " + waterCount + " water.");
-          System.out.println("You have " + woodCount + " wood.");
-          System.out.println("You have " + vinesCount + " vine.");
-          System.out.println("You have " + ropeCount + " rope.");
+          this.console.println("You have " + fruitCount + " fruit.");
+          this.console.println("You have " + vegetableCount + " vegetable.");
+          this.console.println("You have " + waterCount + " water.");
+          this.console.println("You have " + woodCount + " wood.");
+          this.console.println("You have " + vinesCount + " vine.");
+          this.console.println("You have " + ropeCount + " rope.");
         
         
         

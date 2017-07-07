@@ -67,43 +67,43 @@ public class CheckEnergyView extends View{
             try {
                 currentEnergy = Integer.parseInt(actorsCurrentEnergy); // convert actorsCurrentEnergy to int
             } catch (NumberFormatException nfe) {
-                System.out.println("\nYou must enter a valid number. Try again.");
+                ErrorView.display(this.getClass().getName(), "\nYou must enter a valid number. Try again.");
                 return false;
             }
             try {
                 buildTools = Integer.parseInt(actorsBuildTools); // convert actorsBuildTools to int
             } catch (NumberFormatException nfe) {
-                System.out.println("\nYou must enter a valid number. Try again.");
+                ErrorView.display(this.getClass().getName(), "\nYou must enter a valid number. Try again.");
                 return false;
             }
             try {
                 buildRaft = Integer.parseInt(actorsBuildRaft); // convert actorsBuildRaft to int
             } catch (NumberFormatException nfe) {
-                System.out.println("\nYou must enter a valid number. Try again.");
+                ErrorView.display(this.getClass().getName(), "\nYou must enter a valid number. Try again.");
                 return false;
             }
             try {
                 moveLocation = Integer.parseInt(actorsMoveLocation); // convert actorsMoveLocation to int
             } catch (NumberFormatException nfe) {
-                System.out.println("\nYou must enter a valid number. Try again.");
+                ErrorView.display(this.getClass().getName(), "\nYou must enter a valid number. Try again.");
                 return false;
             }
             try {
                 gatherResources = Integer.parseInt(actorsGatherResources); // convert actorsGatherResources to int
             } catch (NumberFormatException nfe) {
-                System.out.println("\nYou must enter a valid number. Try again.");
+                ErrorView.display(this.getClass().getName(), "\nYou must enter a valid number. Try again.");
                 return false;
             }
             try {
                 eatFood = Integer.parseInt(actorsEatFood); // convert actorsEatFood to int
             } catch (NumberFormatException nfe) {
-                System.out.println("\nYou must enter a valid number. Try again.");
+                ErrorView.display(this.getClass().getName(), "\nYou must enter a valid number. Try again.");
                 return false;
             }
             try {
                 drinkWater = Integer.parseInt(actorsDrinkWater); // convert actorsDrinkWater to int
             } catch (NumberFormatException nfe) {
-                System.out.println("\nYou must enter a valid number. Try again.");
+                ErrorView.display(this.getClass().getName(), "\nYou must enter a valid number. Try again.");
                 return false;
             }
             
@@ -113,7 +113,7 @@ public class CheckEnergyView extends View{
             this.displayNextView(energy); // display next view
 
         } catch (ActorControlException ace) {
-            System.out.println(ace.getMessage());
+           ErrorView.display(this.getClass().getName(), ace.getMessage());
             return false;
         }
         
@@ -122,7 +122,7 @@ public class CheckEnergyView extends View{
 
     private void displayNextView(int energy) {
        // display final Energy message
-        System.out.println("\n============================================="
+        this.console.println("\n============================================="
                           + "\n Your New Final Energy Is " + energy
                           + "\n============================================"
                           );

@@ -47,7 +47,7 @@ public class WaterStorageView extends View{
             height = Integer.parseInt(actorsHeight); // convert actorsHeight to int
             
             } catch (NumberFormatException nfe) {
-                System.out.println("\nYou must enter a valid number. Try again.");
+                ErrorView.display(this.getClass().getName(), "You must enter a valid number. Try again.");
                 return false;
             }
             
@@ -55,7 +55,7 @@ public class WaterStorageView extends View{
             weight = Integer.parseInt(actorsWeight); // convert actorsWeight to int
             
             } catch (NumberFormatException nfe) {
-                System.out.println("\nYou must enter a valid number. Try again.");
+                ErrorView.display(this.getClass().getName(), "\nYou must enter a valid number. Try again.");
                 return false;
             }
             
@@ -65,7 +65,7 @@ public class WaterStorageView extends View{
             this.displayNextView(waterStorageCapacity); // display next view
             
         } catch (ActorControlException ace) {
-            System.out.println(ace.getMessage());
+            ErrorView.display(this.getClass().getName(), ace.getMessage());
             return false;
         }
         return true; // success!
@@ -73,7 +73,7 @@ public class WaterStorageView extends View{
 
     private void displayNextView(double waterStorageCapacity) {
         // display water storage capacity message
-        System.out.println("\n============================================="
+        this.console.println("\n============================================="
                           + "\n Your water storage capacity is " + waterStorageCapacity + "lbs"
                           + "\n============================================"
                           );

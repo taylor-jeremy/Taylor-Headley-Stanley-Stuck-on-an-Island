@@ -14,7 +14,7 @@ import stuckonanisland.StuckOnAnIsland;
  *
  * @author Ronnie-PC
  */
-public class MapView {
+public class MapView extends View {
    
     
     public void displayMap(){
@@ -23,7 +23,7 @@ public class MapView {
         Location[] locations = map.getLocations();
         
         for (int i =0; i < locations.length; i++){
-            System.out.println( 
+            this.console.println( 
                 "Location " + locations[i].getName() + ": "
                 + locations[i].getRegularSceneType().getDescription());
         }

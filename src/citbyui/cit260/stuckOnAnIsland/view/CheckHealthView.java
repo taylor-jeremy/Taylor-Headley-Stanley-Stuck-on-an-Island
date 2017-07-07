@@ -59,7 +59,7 @@ public class CheckHealthView extends View{
 
     private void displayNextView(int health) {
        // display final Health message
-        System.out.println("\n============================================="
+        this.console.println("\n============================================="
                           + "\n Your New Final Health Is " + health
                           + "\n============================================"
                           );

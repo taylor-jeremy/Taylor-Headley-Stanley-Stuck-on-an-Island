@@ -6,6 +6,7 @@
 package citbyui.cit260.stuckOnAnIsland.view;
 
 import byui.cit260.stuckOnAnIsland.control.GameControl;
+import byui.cit260.stuckOnAnIsland.model.Actor;
 import java.util.Scanner;
 import stuckonanisland.StuckOnAnIsland;
 
@@ -28,6 +29,7 @@ public class MainMenuView extends View{
                   + "\nC - Continue saved game"
                   + "\nR - Restart game"
                   + "\nH - Get help on how to play the game"
+                  + "\nS - Save game"
                   + "\nQ - Quit"
                   + "\n-----------------------------------------");
     }
@@ -53,8 +55,11 @@ public class MainMenuView extends View{
             case "H": // get help on how to play the game
                 this.displayHelpMenu();
                 break;
+            case "S": // save the current game
+                this.saveGame();
+                break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         
@@ -71,12 +76,22 @@ public class MainMenuView extends View{
     }
 
     private void startExistingGame() {
-        // creating existing game
-        GameControl.startExistingGame(StuckOnAnIsland.getActor());
+        // prompt for and get the name of the file to save the game
+        this.console.println("\n\nEnter the file path for the file where the game is to be saved.");
         
-        // display existing game menu
-        ExistingGameView existingGame = new ExistingGameView();
-        existingGame.display();
+        String filePath = getInput();
+        
+        try {
+            // start a saved game
+            GameControl.getSavedGame(filePath);
+            // display the game menu
+            GameMenuView gameMenu = new GameMenuView();
+            gameMenu.display();
+        } catch (Exception ex) {
+            
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+       
     }
 
     private void restartGame() {
@@ -95,6 +110,24 @@ public class MainMenuView extends View{
         // display the help menu
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
+    }
+
+    private void saveGame() {
+        
+        /*// display save game menu
+        SaveGameView saveMenu = new SaveGameView();
+        saveMenu.display();*/
+        
+        this.console.println("\nEnter the file path for the file where the game is to be saved.");
+        String filePath = this.getInput();
+        
+        try {
+            // save the game to the file
+            GameControl.saveGame(StuckOnAnIsland.getCurrentGame(), filePath);
+            
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView",  ex.getMessage());
+        }
     }
         
 }

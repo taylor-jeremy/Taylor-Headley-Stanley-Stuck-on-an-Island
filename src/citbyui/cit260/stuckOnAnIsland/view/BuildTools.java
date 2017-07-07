@@ -40,7 +40,7 @@ public class BuildTools extends View {
                 this.buildAxe();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         
@@ -49,15 +49,15 @@ public class BuildTools extends View {
     }
 
     private void buildHammer() {
-        System.out.println("\n*** buildHammer Stub function called.");
+        this.console.println("\n*** buildHammer Stub function called.");
     }
 
     private void buildKnife() {
-        System.out.println("\n*** buildKnife Stub function called.");
+        this.console.println("\n*** buildKnife Stub function called.");
     }
 
     private void buildAxe() {
-        System.out.println("\n*** buildAxe Stub function called.");
+        this.console.println("\n*** buildAxe Stub function called.");
     }
     
 }

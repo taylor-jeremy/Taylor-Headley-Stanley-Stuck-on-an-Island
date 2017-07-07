@@ -13,13 +13,19 @@ import byui.cit260.stuckOnAnIsland.model.Map;
 import byui.cit260.stuckOnAnIsland.model.RegularSceneType;
 import byui.cit260.stuckOnAnIsland.model.Resource;
 import byui.cit260.stuckOnAnIsland.model.SceneType;
+import citbyui.cit260.stuckOnAnIsland.view.ErrorView;
+import citbyui.cit260.stuckOnAnIsland.view.View;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import stuckonanisland.StuckOnAnIsland;
 
 /**
  *
  * @author Ronnie-PC
  */
-public class GameControl {
+public class GameControl extends View {
 
     public static Actor createActor(String name) throws GameControlException {
             
@@ -89,15 +95,13 @@ public class GameControl {
    
 
     public static void createHelpMenu(Actor actor) {
-        System.out.println("\n*** createHelpMenu stub function called ***");
+        StuckOnAnIsland.getOutFile().println("\n*** createHelpMenu stub function called ***");
     }
 
-    public static void startExistingGame(Actor actor) {
-        System.out.println("\n*** startExistingGame stub function called. In the future, this will start the game. ***");
-    }
+    
 
     public static void restartGame(Actor actor) {
-        System.out.println("\n*** restartGame stub function called ***");
+        StuckOnAnIsland.getOutFile().println("\n*** restartGame stub function called ***");
     }
 
     /*static void assignScenesToLocations(Map map, RegularSceneType[] regularScenes) {
@@ -108,6 +112,32 @@ public class GameControl {
         locations[0].setScene(regularScenes[SceneType.homeCamp.ordinal()]);
         locations[1].setScene(regularScenes[SceneType.beach.ordinal()]);
         */
+
+    public static void saveGame(Game currentGame, String filePath) throws GameControlException {
+        try(FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(currentGame); // write the game object out to file
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
+
+    public static void getSavedGame(String filepath) throws GameControlException{
+        Game game = null;
+        
+        try(FileInputStream fips = new FileInputStream(filepath)){
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject(); // read the game object from file
+            
+        }
+        catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+        // close the output file
+        StuckOnAnIsland.setCurrentGame(game);
+    }
     }
 
     

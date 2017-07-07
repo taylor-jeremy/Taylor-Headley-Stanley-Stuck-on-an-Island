@@ -60,7 +60,7 @@ public class HelpMenuView extends View {
                 this.healthFacts();
                 break;      
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         
@@ -69,51 +69,51 @@ public class HelpMenuView extends View {
     }
 
     private void goalOfGame() {
-        System.out.println("\n*** The Goal of the game is to build the raft"
+        this.console.println("\n*** The Goal of the game is to build the raft"
                 + " and escape the island.");
     }
 
     private void fastTravel() {
-       System.out.println("\n*** You can use energy to Fast Travel to different"
+       this.console.println("\n*** You can use energy to Fast Travel to different"
                + " locations throughout the map through the Fast Travel Menu.");
     }
 
     private void buildTools() {
-        System.out.println("\n*** You can build tools at the build tools "
+        this.console.println("\n*** You can build tools at the build tools "
                 + " location on the map, building tools allows you to further "
                 + " work on the raft.");
     }
 
     private void gatherResources() {
-        System.out.println("\n*** You can visit many locations on the map"
+        this.console.println("\n*** You can visit many locations on the map"
                 + " where various resources are available to be gathered,"
                 + " certain resources are required of you later on to escape"
                 + " the island.");
     }
 
     private void buildRaft() {
-        System.out.println("\n*** In order to build the raft, you must gather,"
+        this.console.println("\n*** In order to build the raft, you must gather,"
                 + " wood, vine, and have the proper energy to be able to work"
                 + " on the raft, you must also have the proper tools required"
                 + " to work on the raft, which will be showed to you later.");
     }
 
     private void raftStatus() {
-        System.out.println("\n*** At the Raft Scene, you will be able to "
+        this.console.println("\n*** At the Raft Scene, you will be able to "
                 + " periodicially check the status of your raft, and it will"
                 + " tell you how much more resources are required to finish the"
                 + " raft.");
     }
 
     private void energyFacts() {
-        System.out.println("\n*** Energy is very important in this game, energy"
+        this.console.println("\n*** Energy is very important in this game, energy"
                 + " is needed to gather resources, build the raft, build tools,"
                 + " and to travel, You can gain energy back by drinking or "
                 + " eating from your resources.");
     }
 
     private void healthFacts() {
-        System.out.println("\n*** Health is important in order to keep you alive"
+        this.console.println("\n*** Health is important in order to keep you alive"
                 + " and able to escape from the Island. In order to keep your"
                 + " health in order, you must keep your energy high, if your"
                 + " energy drops below 50, you will lose health, if it drops"

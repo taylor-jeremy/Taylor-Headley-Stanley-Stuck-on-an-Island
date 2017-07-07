@@ -62,7 +62,7 @@ public class WreckageInventoryMenuView extends View {
                 this.buckets();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         
@@ -70,38 +70,38 @@ public class WreckageInventoryMenuView extends View {
     }
 
     private void cannedFood() {
-        System.out.println("\n*** cannedFood Stub function called.");
+        this.console.println("\n*** cannedFood Stub function called.");
     }
 
     private void bottleOfWater() {
-        System.out.println("\n*** bottleOfWater Stub function called.");
+        this.console.println("\n*** bottleOfWater Stub function called.");
     }
 
     private void lighter() {
-        System.out.println("\n*** lighter Stub function called.");
+        this.console.println("\n*** lighter Stub function called.");
     }
 
     private void flashlight() {
-        System.out.println("\n*** flashlight Stub function called.");
+        this.console.println("\n*** flashlight Stub function called.");
     }
 
     private void multiTool() {
-        System.out.println("\n*** multiTool Stub function called.");
+        this.console.println("\n*** multiTool Stub function called.");
     }
 
     private void dryFood() {
-        System.out.println("\n*** dryFood Stub function called.");
+        this.console.println("\n*** dryFood Stub function called.");
     }
 
     private void knife() {
-        System.out.println("\n*** knife Stub function called.");
+        this.console.println("\n*** knife Stub function called.");
     }
 
     private void tarp() {
-        System.out.println("\n*** tarp Stub function called.");
+        this.console.println("\n*** tarp Stub function called.");
     }
 
     private void buckets() {
-        System.out.println("\n*** buckets Stub function called.");
+        this.console.println("\n*** buckets Stub function called.");
     }
 }

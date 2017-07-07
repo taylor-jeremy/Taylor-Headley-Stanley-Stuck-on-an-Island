@@ -5,7 +5,10 @@
  */
 package citbyui.cit260.stuckOnAnIsland.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import stuckonanisland.StuckOnAnIsland;
 
 /**
  *
@@ -14,6 +17,9 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
     
     protected String displayMessage;
+    
+    protected final BufferedReader keyboard = StuckOnAnIsland.getInFile();
+    protected final PrintWriter console = StuckOnAnIsland.getOutFile();
     
     public View() {
     
@@ -43,30 +49,34 @@ public abstract class View implements ViewInterface {
     
     public String getInput(String prompt) {
         
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
         boolean valid = false; // value to be returned
         String value = null; //initialize to not valid
-        
-        while (!valid) {
-            
-            // prompt for the input
-            System.out.println("\n" + prompt);
-            
-            // get the value entered from the keyboard
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-            
-            if (value.length() < 1) { // blank value entered
-                System.out.println("\n*** You must enter a value *** ");
-                continue;
+        try {
+            // while a valid name has not been retrieved
+            while (!valid) {
+
+                // prompt for the input
+                this.console.println("\n" + prompt);
+
+                // get the value entered from the keyboard
+                value = this.keyboard.readLine(); // get next line typed on keyboard
+                value = value.trim(); // trim off leading and trailing blanks
+
+                if (value.length() < 1) { // blank value entered
+                    ErrorView.display(this.getClass().getName(), "You must enter a value.");
+                    continue;
+                }
+                    break;
             }
-                break;
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
         }
-        return value; // return the value entered
+        
+        return value;
     }
     
     public boolean doAction(String variable){
-        System.out.println("You likely didn't want to call this method.");
+        this.console.println("You likely didn't want to call this method.");
         return true;
     }
 }

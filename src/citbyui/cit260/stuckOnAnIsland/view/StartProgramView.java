@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  *
  * @author Ronnie-PC
  */
-public class StartProgramView {
+public class StartProgramView extends View {
     
     private String promptMessage;
     
@@ -29,7 +29,7 @@ public class StartProgramView {
     }
 
     private void displayBanner() {
-        System.out.println(
+        this.console.println(
         "\n***********************************************"
        +"\n*                                             *"
        +"\n* Welcome to the game Stuck On An Island      *"
@@ -44,8 +44,7 @@ public class StartProgramView {
     }
 
     public void displayStartProgramView() {
-        
-        //System.out.println("\n*** displayStartProgram() function called ***");
+       
         boolean done = false; // set flag to not done
         do {
                 // prompt for and get players name 
@@ -60,33 +59,37 @@ public class StartProgramView {
         }
 
     private String getActorsName() {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; //initialize to not valid
         
-        while (!valid) {
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-            
-            if (value.length() < 1) {
-                System.out.println("\nInvalid value: value can not be blank");
-                continue; 
+        try {
+            while (!valid) {
+                this.console.println("\n" + this.promptMessage);
+
+                value = this.keyboard.readLine(); // get next line typed on keyboard
+                value = value.trim(); // trim off leading and trailing blanks
+
+                if (value.length() < 1) {
+                    ErrorView.display(this.getClass().getName(), "You must enter a value.");
+                    continue; 
+                }
+
+                break; // end the loop
+
             }
-            
-            break; // end the loop
-                    
+
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
         }
-        
-        return value; // return the value entered
+        return value;
     }
 
-    private boolean doAction(String actorsName) {
+    @Override
+    public boolean doAction(String actorsName) {
        
         try {
             if (actorsName.length() < 2) {
-                System.out.println("\nInvalid players name: "
+                ErrorView.display(this.getClass().getName(), "\nInvalid players name: "
                         + "The name must be greater than one character in length");
                 return false;
             }
