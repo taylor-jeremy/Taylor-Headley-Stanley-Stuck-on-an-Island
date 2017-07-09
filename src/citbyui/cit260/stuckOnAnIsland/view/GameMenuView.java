@@ -9,6 +9,8 @@ import byui.cit260.stuckOnAnIsland.model.Game;
 import byui.cit260.stuckOnAnIsland.model.Map;
 import byui.cit260.stuckOnAnIsland.model.Resource;
 import byui.cit260.stuckOnAnIsland.model.ToolItem;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import stuckonanisland.StuckOnAnIsland;
 
@@ -23,6 +25,7 @@ public class GameMenuView extends View {
                   + "\n-----------------------------------------"
                   + "\n| Game Menu                             |"
                   + "\n-----------------------------------------"
+                  + "\nP - Print Inventory Report"
                   + "\nI - View your Inventory"
                   + "\nW - Calculate your Water Storage Capacity?"
                   + "\nM - Display Map" 
@@ -40,7 +43,10 @@ public class GameMenuView extends View {
     public boolean doAction(String value) {
         value = value.toUpperCase(); // convert choice to upper case
         switch (value) {
-            case "I": // Water Storage
+            /*case "P": // Print Report of Inventory
+                this.printInventoryReport();
+                break;*/
+            case "I": // View Inventory
                 this.viewInventory();
                 break;
             case "W": // Water Storage
@@ -116,8 +122,10 @@ public class GameMenuView extends View {
         
         Resource[] items = Resource.values();
         
+        
         for (Resource item : items) {
             this.console.println(item);
+            
         }
     }
     
@@ -140,23 +148,27 @@ public class GameMenuView extends View {
           int ropeCount = 0;
           
           for (Resource item: StuckOnAnIsland.getCurrentGame().getResource()) {
-              if (item == Resource.Fruit) {
-                  fruitCount++;
-              }
-              else if (item == Resource.Vegetables) {
-                  vegetableCount++;
-              }
-              else if (item == Resource.Water) {
-                  waterCount++;
-              }
-              else if (item == Resource.Wood) {
-                  woodCount++;
-              }
-              else if (item == Resource.Vines) {
-                  vinesCount++;
-              }
-              else if (item == Resource.Rope) {
-                  ropeCount++;
+              if (null != item) switch (item) {
+                  case Fruit:
+                      fruitCount++;
+                      break;
+                  case Vegetables:
+                      vegetableCount++;
+                      break;
+                  case Water:
+                      waterCount++;
+                      break;
+                  case Wood:
+                      woodCount++;
+                      break;
+                  case Vines:
+                      vinesCount++;
+                      break;
+                  case Rope:
+                      ropeCount++;
+                      break;
+                  default:
+                      break;
               }
     }
           this.console.println("You have " + fruitCount + " fruit.");
@@ -165,39 +177,26 @@ public class GameMenuView extends View {
           this.console.println("You have " + woodCount + " wood.");
           this.console.println("You have " + vinesCount + " vine.");
           this.console.println("You have " + ropeCount + " rope.");
+}
+      
+    /*public void printInventoryReport(ArrayList<Resource> inventoryItems, String outputLocation) {
         
-        
-        
-        
-        
-        
-        /*StringBuilder line;
-        
-        Game game = StuckOnAnIsland.getCurrentGame();
-        ArrayList<Resource> resource = game.getResource();
-        
-        System.out.println("\n LIST OF RESOURCE ITEMS");
-        line = new StringBuilder("                             ");
-        line.insert(0, "DESCRIPTION");
-        System.out.println(line.toString());
-        
-        // for each resource item
-        for (Resource item : resource) {
-            line = new StringBuilder("                           ");
-            line.insert(0, item.getDescription());
+        // create BufferedReader object for input file
+        try (PrintWriter out = new PrintWriter(outputLocation)) {
             
-            // DISPLAY the line
-            System.out.println(line.toString());
+            // print title and column headings
+            out.println("\n\n         Inventory Report        ");
+            out.printf("%n%-20s%10s", "Item", "Description");
+            out.printf("%n%-20s%10s", "----", "-----------");
+            
+            // print the iteam, and description of each item. 
+            for (Resource item : inventoryItems) {
+                out.printf("%n%-20s%7d", item.getDescription());
+            }
+        } catch (IOException ex) {
+            this.console.println("I/O Error: " + ex.getMessage());
         }
-        
-        
     }*/
-
-   
-
-   
-
-   
-}}
+}
 
   

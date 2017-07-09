@@ -34,7 +34,6 @@ public class Game implements Serializable {
         return tool;
     }
 
-
     public ArrayList<Resource> getResource() {
         return resources;
     }
