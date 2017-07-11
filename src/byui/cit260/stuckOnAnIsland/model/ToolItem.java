@@ -22,6 +22,10 @@ public enum ToolItem implements Serializable {
     ToolItem(String description) {
         this.description = description;
     }
+
+    public String getDescription() {
+        return description;
+    }
     
     
 }

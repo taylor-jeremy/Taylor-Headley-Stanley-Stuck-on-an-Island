@@ -26,6 +26,7 @@ public class GameMenuView extends View {
                   + "\n| Game Menu                             |"
                   + "\n-----------------------------------------"
                   + "\nP - Print Inventory Report"
+                  + "\nN = Print Tools Report" 
                   + "\nI - View your Inventory"
                   + "\nW - Calculate your Water Storage Capacity?"
                   + "\nM - Display Map" 
@@ -46,6 +47,9 @@ public class GameMenuView extends View {
             /*case "P": // Print Report of Inventory
                 this.printInventoryReport();
                 break;*/
+            case "N": // Print Report of Tools
+                this.toolsFilePath();
+                break;
             case "I": // View Inventory
                 this.viewInventory();
                 break;
@@ -197,6 +201,32 @@ public class GameMenuView extends View {
             this.console.println("I/O Error: " + ex.getMessage());
         }
     }*/
+    private void toolsFilePath () {
+        // prompt for and get the name of the file to print the report
+        this.console.println("\n\nEnter the file path for the file where the "
+                + "tools should be printed to.");
+        String toolsFilePath = this.getInput();
+        ArrayList<ToolItem> tool = StuckOnAnIsland.getCurrentGame().getTool();
+        printToolsReport(toolsFilePath, tool);
+    }
+
+    private void printToolsReport(String toolsFilePath, ArrayList<ToolItem> tool) {
+        // create BufferedReader object for input file
+        try (PrintWriter out = new PrintWriter(toolsFilePath)) {
+            
+            // print title and column headings
+            out.println("\n\n         Tools Report        ");
+            out.printf("%n%-20s%10s", "Tool", "Description");
+            out.printf("%n%-20s%10s", "----", "-----------");
+            
+            // print the iteam, and description of each item. 
+            for (ToolItem item : tool) {
+                out.printf("%n%-20s%7d", item.getDescription());
+            }
+        } catch (IOException ex) {
+            this.console.println("I/O Error: " + ex.getMessage());
+        }
+    }
 }
 
   
