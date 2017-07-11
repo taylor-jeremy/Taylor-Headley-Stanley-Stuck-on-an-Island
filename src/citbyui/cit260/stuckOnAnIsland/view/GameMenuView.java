@@ -183,7 +183,7 @@ public class GameMenuView extends View {
           this.console.println("You have " + ropeCount + " rope.");
 }
       
-    /*public void printInventoryReport(ArrayList<Resource> inventoryItems, String outputLocation) {
+    public void printInventoryReport(ArrayList<Resource> inventoryItems, String outputLocation) {
         
         // create BufferedReader object for input file
         try (PrintWriter out = new PrintWriter(outputLocation)) {
@@ -200,7 +200,7 @@ public class GameMenuView extends View {
         } catch (IOException ex) {
             this.console.println("I/O Error: " + ex.getMessage());
         }
-    }*/
+    }
     private void toolsFilePath () {
         // prompt for and get the name of the file to print the report
         this.console.println("\n\nEnter the file path for the file where the "
