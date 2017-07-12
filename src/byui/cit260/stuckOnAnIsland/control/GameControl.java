@@ -13,6 +13,7 @@ import byui.cit260.stuckOnAnIsland.model.Map;
 import byui.cit260.stuckOnAnIsland.model.RegularSceneType;
 import byui.cit260.stuckOnAnIsland.model.Resource;
 import byui.cit260.stuckOnAnIsland.model.SceneType;
+import byui.cit260.stuckOnAnIsland.model.ToolItem;
 import citbyui.cit260.stuckOnAnIsland.view.ErrorView;
 import citbyui.cit260.stuckOnAnIsland.view.View;
 import java.io.FileInputStream;
@@ -68,6 +69,10 @@ public class GameControl extends View {
         
         InventoryControl.addResource(Resource.Rope);
         InventoryControl.addResource(Resource.Rope);
+        
+        game.getTool().add(ToolItem.Axe);
+        game.getTool().add(ToolItem.Hammer);
+        game.getTool().add(ToolItem.Knife);
         
         
         game.setActor(actor); // save actor in game
