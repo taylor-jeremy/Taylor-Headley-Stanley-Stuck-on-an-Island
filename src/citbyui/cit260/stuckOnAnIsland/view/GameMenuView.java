@@ -203,9 +203,8 @@ public class GameMenuView extends View {
     }*/
     private void toolsFilePath () {
         // prompt for and get the name of the file to print the report
-        this.console.println("\n\nEnter the file path for the file where the "
+        String toolsFilePath = this.getInput("\n\nEnter the file path for the file where the "
                 + "tools should be printed to.");
-        String toolsFilePath = this.getInput();
         ArrayList<ToolItem> tool = StuckOnAnIsland.getCurrentGame().getTool();
         printToolsReport(toolsFilePath, tool);
     }
@@ -221,10 +220,11 @@ public class GameMenuView extends View {
             
             // print the iteam, and description of each item. 
             for (ToolItem item : tool) {
-                out.printf("%n%-20s%7d", item.getDescription());
+                out.printf("%n%-20s%s", item.name(), item.getDescription());
             }
+            console.println("Tools Printed to " + toolsFilePath + " successfully.");
         } catch (IOException ex) {
-            this.console.println("I/O Error: " + ex.getMessage());
+            ErrorView.display(getClass().getName(), "I/O Error: " + ex.getMessage());
         }
     }
 }
