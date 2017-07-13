@@ -1,0 +1,23 @@
+
+
+         Inventory Report        
+
+Item                Description
+----                -----------
+Fruit               Helps increase energy
+Fruit               Helps increase energy
+Fruit               Helps increase energy
+Fruit               Helps increase energy
+Vegetables          Helps increase energy
+Vegetables          Helps increase energy
+Water               Helps increase energy
+Wood                Helps build the raft
+Wood                Helps build the raft
+Wood                Helps build the raft
+Vines               Helps build the raft
+Vines               Helps build the raft
+Vines               Helps build the raft
+Vines               Helps build the raft
+Vines               Helps build the raft
+Rope                Helps build the raft
+Rope                Helps build the raft

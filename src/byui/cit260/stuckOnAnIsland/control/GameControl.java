@@ -75,6 +75,8 @@ public class GameControl extends View {
         game.getTool().add(ToolItem.Knife);
         
         
+        
+        
         game.setActor(actor); // save actor in game
        
         // this how you add a tool

@@ -26,7 +26,7 @@ public class GameMenuView extends View {
                   + "\n| Game Menu                             |"
                   + "\n-----------------------------------------"
                   + "\nP - Print Inventory Report"
-                  + "\nN = Print Tools Report" 
+                  + "\nN - Print Tools Report" 
                   + "\nI - View your Inventory"
                   + "\nW - Calculate your Water Storage Capacity?"
                   + "\nM - Display Map" 
@@ -44,9 +44,9 @@ public class GameMenuView extends View {
     public boolean doAction(String value) {
         value = value.toUpperCase(); // convert choice to upper case
         switch (value) {
-            /*case "P": // Print Report of Inventory
-                this.printInventoryReport();
-                break;*/
+            case "P": // Print Report of Inventory
+                this.InventoryFilePath();
+                break;
             case "N": // Print Report of Tools
                 this.toolsFilePath();
                 break;
@@ -183,10 +183,18 @@ public class GameMenuView extends View {
           this.console.println("You have " + ropeCount + " rope.");
 }
       
-    public void printInventoryReport(ArrayList<Resource> inventoryItems, String outputLocation) {
+    private void InventoryFilePath() {
+        
+        //prompt for and get the name of the file to print the report
+        String inventoryFilePath = this.getInput("\n\nEnter the file path for the Inventory Items report to be printed to.");
+        ArrayList<Resource> resource = StuckOnAnIsland.getCurrentGame().getResource();
+        printInventoryReport(inventoryFilePath, resource);
+    }
+      
+    public void printInventoryReport(String inventoryFilePath, ArrayList<Resource> resource) {
         
         // create BufferedReader object for input file
-        try (PrintWriter out = new PrintWriter(outputLocation)) {
+        try (PrintWriter out = new PrintWriter(inventoryFilePath)) {
             
             // print title and column headings
             out.println("\n\n         Inventory Report        ");
@@ -194,11 +202,12 @@ public class GameMenuView extends View {
             out.printf("%n%-20s%10s", "----", "-----------");
             
             // print the iteam, and description of each item. 
-            for (Resource item : inventoryItems) {
-                out.printf("%n%-20s%7d", item.getDescription());
+            for (Resource item : resource) {
+                out.printf("%n%-20s%s", item.name(), item.getDescription());
             }
+            console.println("Resources Printed to " + inventoryFilePath + " successfully.");
         } catch (IOException ex) {
-            this.console.println("I/O Error: " + ex.getMessage());
+            ErrorView.display(getClass().getName(), "I/O Error: " + ex.getMessage());
         }
     }
     private void toolsFilePath () {
@@ -227,6 +236,8 @@ public class GameMenuView extends View {
             ErrorView.display(getClass().getName(), "I/O Error: " + ex.getMessage());
         }
     }
+
+
 }
 
   
