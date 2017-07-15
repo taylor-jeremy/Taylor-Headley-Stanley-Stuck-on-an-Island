@@ -12,7 +12,6 @@ import byui.cit260.stuckOnAnIsland.model.Location;
 import byui.cit260.stuckOnAnIsland.model.Map;
 import byui.cit260.stuckOnAnIsland.model.RegularSceneType;
 import byui.cit260.stuckOnAnIsland.model.Resource;
-import byui.cit260.stuckOnAnIsland.model.SceneType;
 import byui.cit260.stuckOnAnIsland.model.ToolItem;
 import citbyui.cit260.stuckOnAnIsland.view.ErrorView;
 import citbyui.cit260.stuckOnAnIsland.view.View;

@@ -9,9 +9,9 @@ package byui.cit260.stuckOnAnIsland.model;
  *
  * @author Ronnie-PC
  */
- public class City1Scene extends RegularSceneType {
+ public class RegularCityScene extends RegularSceneType {
         
-        public City1Scene(){
-            super("Welcome to City1, Good Luck!");
+        public RegularCityScene(){
+            super("This is a normal scene.!");
         }
     }

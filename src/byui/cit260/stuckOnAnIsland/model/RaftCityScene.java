@@ -9,9 +9,9 @@ package byui.cit260.stuckOnAnIsland.model;
  *
  * @author Ronnie-PC
  */
-public class City2Scene extends RegularSceneType {
+public class RaftCityScene extends RaftSceneType {
         
-        public City2Scene(){
-            super("Welcome to City2, Good Luck!");
+        public RaftCityScene(){
+            super("This is a raft scene.");
         }
     }

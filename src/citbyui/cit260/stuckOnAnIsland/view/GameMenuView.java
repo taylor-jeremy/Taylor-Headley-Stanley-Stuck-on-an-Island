@@ -206,7 +206,7 @@ public class GameMenuView extends View {
                 out.printf("%n%-20s%s", item.name(), item.getDescription());
             }
             console.println("Resources Printed to " + inventoryFilePath + " successfully.");
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             ErrorView.display(getClass().getName(), "I/O Error: " + ex.getMessage());
         }
     }

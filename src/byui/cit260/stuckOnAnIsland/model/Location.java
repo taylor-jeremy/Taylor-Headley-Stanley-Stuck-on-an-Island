@@ -16,10 +16,9 @@ public class Location implements Serializable{
     // class instance variables
     private String name;
     private RegularSceneType regularScene;
-    
-    private BuildScene buildScene;
-    private RaftScene raftScene;
-    private GatherScene[] gatherScene;
+    private BuildSceneType buildScene;
+    private RaftSceneType raftScene;
+    private GatherSceneType gatherScene;
     private Actor actor;
 
     
@@ -38,6 +37,30 @@ public class Location implements Serializable{
 
     public void setRegularSceneType(RegularSceneType locationScene) {
         this.regularScene = locationScene;
+    }
+    
+    public BuildSceneType getBuildSceneType() {
+        return buildScene;
+    }
+
+    public void setBuildSceneType(BuildSceneType locationScene) {
+        this.buildScene = locationScene;
+    }
+    
+    public RaftSceneType getRaftSceneType() {
+        return raftScene;
+    }
+
+    public void setRaftSceneType(RaftSceneType locationScene) {
+        this.raftScene = locationScene;
+    }
+    
+    public GatherSceneType getGatherSceneType() {
+        return gatherScene;
+    }
+
+    public void setGatherSceneType(GatherSceneType locationScene) {
+        this.gatherScene = locationScene;
     }
 
    

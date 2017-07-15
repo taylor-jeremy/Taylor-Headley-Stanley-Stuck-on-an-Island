@@ -9,9 +9,9 @@ package byui.cit260.stuckOnAnIsland.model;
  *
  * @author Ronnie-PC
  */
-public class City3Scene extends RegularSceneType {
+public class GatherCityScene extends GatherSceneType {
         
-        public City3Scene(){
-            super("Welcome to City3, Good Luck!");
+        public GatherCityScene(){
+            super("This is a gather scene.");
         }
     }

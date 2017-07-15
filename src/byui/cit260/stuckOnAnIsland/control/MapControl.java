@@ -4,16 +4,13 @@
  * and open the template in the editor.
  */
 package byui.cit260.stuckOnAnIsland.control;
-
-import byui.cit260.stuckOnAnIsland.model.City1Scene;
-import byui.cit260.stuckOnAnIsland.model.City2Scene;
-import byui.cit260.stuckOnAnIsland.model.City3Scene;
-import byui.cit260.stuckOnAnIsland.model.City4Scene;
-import byui.cit260.stuckOnAnIsland.model.City5Scene;
+import byui.cit260.stuckOnAnIsland.model.BuildCityScene;
+import byui.cit260.stuckOnAnIsland.model.GatherCityScene;
+import byui.cit260.stuckOnAnIsland.model.RaftCityScene;
 import byui.cit260.stuckOnAnIsland.model.Location;
 import byui.cit260.stuckOnAnIsland.model.Map;
+import byui.cit260.stuckOnAnIsland.model.RegularCityScene;
 import byui.cit260.stuckOnAnIsland.model.RegularSceneType;
-import byui.cit260.stuckOnAnIsland.model.SceneType;
 
 /**
  *
@@ -61,69 +58,38 @@ public class MapControl {
     }
     
     private static void assignScenesToLocations(Location[] locations) {
-        locations[0].setRegularSceneType(new City1Scene());
-        locations[1].setRegularSceneType(new City2Scene());
-        locations[2].setRegularSceneType(new City3Scene()); 
-        locations[3].setRegularSceneType(new City4Scene()); 
-        locations[4].setRegularSceneType(new City5Scene());
-        locations[5].setRegularSceneType(new City1Scene());
-        locations[6].setRegularSceneType(new City2Scene());
-        locations[7].setRegularSceneType(new City3Scene()); 
-        locations[8].setRegularSceneType(new City4Scene()); 
-        locations[9].setRegularSceneType(new City5Scene());
-        locations[10].setRegularSceneType(new City1Scene());
-        locations[11].setRegularSceneType(new City2Scene());
-        locations[12].setRegularSceneType(new City3Scene()); 
-        locations[13].setRegularSceneType(new City4Scene()); 
-        locations[14].setRegularSceneType(new City5Scene());
-        locations[15].setRegularSceneType(new City1Scene());
-        locations[16].setRegularSceneType(new City2Scene());
-        locations[17].setRegularSceneType(new City3Scene()); 
-        locations[18].setRegularSceneType(new City4Scene()); 
-        locations[19].setRegularSceneType(new City5Scene());
-        locations[20].setRegularSceneType(new City1Scene());
-        locations[21].setRegularSceneType(new City2Scene());
-        locations[22].setRegularSceneType(new City3Scene()); 
-        locations[23].setRegularSceneType(new City4Scene()); 
-        locations[24].setRegularSceneType(new City5Scene());
+        locations[0].setRegularSceneType(new RegularCityScene());
+        locations[1].setRegularSceneType(new RegularCityScene());
+        locations[2].setRegularSceneType(new RegularCityScene()); 
+        locations[3].setBuildSceneType(new BuildCityScene()); 
+        locations[4].setGatherSceneType(new GatherCityScene());
+        locations[5].setRegularSceneType(new RegularCityScene());
+        locations[6].setRegularSceneType(new RegularCityScene());
+        //locations[7].setRegularSceneType(new City3Scene()); 
+        //locations[8].setRegularSceneType(new City4Scene()); 
+        //locations[9].setRegularSceneType(new City5Scene());
+        locations[10].setRegularSceneType(new RegularCityScene());
+        locations[11].setRegularSceneType(new RegularCityScene());
+        //locations[12].setRegularSceneType(new City3Scene()); 
+        //locations[13].setRegularSceneType(new City4Scene()); 
+        //locations[14].setRegularSceneType(new City5Scene());
+        locations[15].setRegularSceneType(new RegularCityScene());
+        //locations[16].setRegularSceneType(new RegularCityScene());
+        //locations[17].setRegularSceneType(new City3Scene()); 
+        //locations[18].setRegularSceneType(new City4Scene()); 
+        //locations[19].setRegularSceneType(new City5Scene());
+        locations[20].setRegularSceneType(new RegularCityScene());
+        locations[21].setRegularSceneType(new RegularCityScene());
+        //locations[22].setRegularSceneType(new City3Scene()); 
+        //locations[23].setRegularSceneType(new City4Scene()); 
+        //locations[24].setRegularSceneType(new City5Scene());
     }
 
     /*static void moveActorsToStartingLocation(Map map) {
         System.out.println("stub function called moveActorsToStartingLocation");
     }*/
 
-    
-    /*
-    private static RegularSceneType[] createScenes() {
-        
-        RegularSceneType[] regularScenes = new RegularSceneType[SceneType.values().length];
-        
-        RegularSceneType startingScene = new RegularSceneType();
-        startingScene.setDescription(
-                "You have just lost your way in a intense and brutal ocean storm, you "
-                + " have no idea where you have crashed your ship, all you see"
-                + " is a beach in front of you, and that you are on some kind of"
-                + " island. This is a shipwreck!");
-        
-        startingScene.setSymbol(" SW ");
-        startingScene.setTravelTime(5);
-        regularScenes[SceneType.homeCamp.ordinal()] = startingScene;
-        
-        RegularSceneType finishScene = new RegularSceneType();
-        finishScene.setDescription(
-                "Congratulation! You have successfuly completed the game and have "
-                + "escapted the island on your excellent hand built raft!");
-        finishScene.setSymbol(" FN ");
-        finishScene.setTravelTime(5);
-        regularScenes[SceneType.sailAway.ordinal()] = finishScene;
-        
-        
-       
-        
-        return regularScenes;
-    }
-*/
-
+ 
     
     
 }
