@@ -231,8 +231,8 @@ public class GameMenuView extends View {
             for (ToolItem item : tool) {
                 out.printf("%n%-20s%s", item.name(), item.getDescription());
             }
-            console.println("Tools Printed to " + toolsFilePath + " successfully.");
-        } catch (IOException ex) {
+            console.println("Tools printed to " + toolsFilePath + " successfully.");
+        } catch (Exception ex) {
             ErrorView.display(getClass().getName(), "I/O Error: " + ex.getMessage());
         }
     }
