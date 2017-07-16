@@ -36,6 +36,7 @@ public class GameMenuView extends View {
                   + "\nL - View list of Tools"
                   + "\nT - Build Tools Menu"
                   + "\nJ - Wreckage Inventory Menu"
+                  + "\nB - Build Raft Menu"
                   + "\nQ - Quit"
                   + "\n-----------------------------------------");
     }
@@ -77,6 +78,8 @@ public class GameMenuView extends View {
             case "J": // Wreckage Inventory Menu
                 this.wreckageInventory();
                 break;
+            case "B": // Build Raft Menu
+                this.buildRaft();
             default:
                 this.console.println("\n*** Invalid selection *** Try again");
                 break;
@@ -235,6 +238,11 @@ public class GameMenuView extends View {
         } catch (Exception ex) {
             ErrorView.display(getClass().getName(), "I/O Error: " + ex.getMessage());
         }
+    }
+
+    private void buildRaft() {
+        BuildRaftMenuView buildRaft = new BuildRaftMenuView();
+        buildRaft.display();
     }
 
 
