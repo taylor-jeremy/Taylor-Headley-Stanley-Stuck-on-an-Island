@@ -1,10 +1,5 @@
- /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.stuckOnAnIsland.control;
-
+import byui.cit260.stuckOnAnIsland.exceptions.ActorControlException;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -125,7 +120,7 @@ public class ActorControlTest {
      * Test of calcEnergy method, of class ActorControl.
      */
     @Test
-    public void testCalcEnergy() {
+    public void testCalcEnergy() throws ActorControlException {
         System.out.println("calcEnergy");
         
         //test case #1
@@ -247,7 +242,7 @@ public class ActorControlTest {
      * Test of calcWaterStorageCapacity method, of class ActorControl.
      */
     @Test
-    public void testCalcWaterStorageCapacity() {
+    public void testCalcWaterStorageCapacity() throws ActorControlException {
         System.out.println("calcWaterStorageCapacity");
         
         //test case #1

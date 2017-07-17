@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.stuckOnAnIsland.model;
-
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -20,9 +14,7 @@ public abstract class BuildSceneType implements Serializable{
     private String buildTools;
     private double energy;
     private double health;
-    
-    //private ToolItem[] tool;
-
+   
     public BuildSceneType(String description) {
         this.description = description;
     }
@@ -31,7 +23,7 @@ public abstract class BuildSceneType implements Serializable{
         return description;
     }
 
-    /*public String getAvailableTools() {
+    public String getAvailableTools() {
         return availableTools;
     }
 
@@ -61,19 +53,6 @@ public abstract class BuildSceneType implements Serializable{
 
     public void setHealth(double health) {
         this.health = health;
-    }
-
-    public ToolItem[] getTool() {
-        return tool;
-    }
-
-    public void setTool(ToolItem[] tool) {
-        this.tool = tool;
-    }
-    */
-
-    
-    
-    
+    } 
     
 }

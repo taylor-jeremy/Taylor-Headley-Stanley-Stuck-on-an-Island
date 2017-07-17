@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.stuckOnAnIsland.control;
-
 import byui.cit260.stuckOnAnIsland.exceptions.GameControlException;
 import byui.cit260.stuckOnAnIsland.model.Actor;
 import byui.cit260.stuckOnAnIsland.model.Game;
@@ -46,6 +40,8 @@ public class GameControl extends View {
         Game game = new Game(); //create new game
         StuckOnAnIsland.setCurrentGame(game); // save in StuckOnAnIsland
         
+        game.setActor(actor); // save actor in game
+        
         InventoryControl.addResource(Resource.Fruit);
         InventoryControl.addResource(Resource.Fruit);
         InventoryControl.addResource(Resource.Fruit);
@@ -72,25 +68,10 @@ public class GameControl extends View {
         game.getTool().add(ToolItem.Axe);
         game.getTool().add(ToolItem.Hammer);
         game.getTool().add(ToolItem.Knife);
-        
-        
-        
-        
-        game.setActor(actor); // save actor in game
        
         // this how you add a tool
        // StuckOnAnIsland.getCurrentGame().getTool().add(ToolItem.Axe);
-        
-        
-        createMap(game); // create and initailize the new map
-         // save map in game
-        
-        //move actors to starting poistion in the map
-        //MapControl.moveActorsToStartingLocation(map);
-        
-        
-        
-         
+       
     }
     
     public static void createMap(Game game){
@@ -109,15 +90,6 @@ public class GameControl extends View {
     public static void restartGame(Actor actor) {
         StuckOnAnIsland.getOutFile().println("\n*** restartGame stub function called ***");
     }
-
-    /*static void assignScenesToLocations(Map map, RegularSceneType[] regularScenes) {
-        
-        Location[] locations = map.getLocations();
-        
-        // start point
-        locations[0].setScene(regularScenes[SceneType.homeCamp.ordinal()]);
-        locations[1].setScene(regularScenes[SceneType.beach.ordinal()]);
-        */
 
     public static void saveGame(Game currentGame, String filePath) throws GameControlException {
         try(FileOutputStream fops = new FileOutputStream(filePath)) {

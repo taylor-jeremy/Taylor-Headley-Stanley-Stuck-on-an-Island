@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package citbyui.cit260.stuckOnAnIsland.view;
-
 import byui.cit260.stuckOnAnIsland.control.ActorControl;
 import byui.cit260.stuckOnAnIsland.exceptions.ActorControlException;
 import java.util.Scanner;
@@ -126,8 +120,6 @@ public class CheckEnergyView extends View{
                           + "\n Your New Final Energy Is " + energy
                           + "\n============================================"
                           );
-    }
-    
-    
+    }  
 }
 

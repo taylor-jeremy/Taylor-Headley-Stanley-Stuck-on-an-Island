@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package citbyui.cit260.stuckOnAnIsland.view;
-
 import byui.cit260.stuckOnAnIsland.model.Game;
 import byui.cit260.stuckOnAnIsland.model.Map;
 import byui.cit260.stuckOnAnIsland.model.Resource;
@@ -87,17 +81,10 @@ public class GameMenuView extends View {
         
         return false;
     }
-
-    
-     //void displayMenu() {
-       // WaterStorageView waterStorageView = new WaterStorageView();
-       // waterStorageView.displayWaterStorageView();
-    //}
     
      private void displayMap() {
         MapView mapView = new MapView();
         mapView.displayMap();
-       
     }
     
     private void calcWaterStorage() {
@@ -128,7 +115,6 @@ public class GameMenuView extends View {
     private void viewResource() {
         
         Resource[] items = Resource.values();
-        
         
         for (Resource item : items) {
             this.console.println(item);
@@ -244,8 +230,6 @@ public class GameMenuView extends View {
         BuildRaftMenuView buildRaft = new BuildRaftMenuView();
         buildRaft.display();
     }
-
-
 }
 
   
