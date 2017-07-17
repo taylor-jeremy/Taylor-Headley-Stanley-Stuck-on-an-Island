@@ -1,3 +1,0 @@
-StuckOnAnIsland - Exception: java.lang.NullPointerException
-Cause: null
-Message: null
