@@ -58,26 +58,26 @@ public class MapControl {
         locations[2].setRegularSceneType(new RegularCityScene()); 
         locations[3].setBuildSceneType(new BuildCityScene()); 
         locations[4].setGatherSceneType(new GatherCityScene());
-        locations[5].setRegularSceneType(new RegularCityScene());
+        locations[5].setGatherSceneType(new GatherCityScene());
         locations[6].setRegularSceneType(new RegularCityScene());
-        //locations[7].setRegularSceneType(new City3Scene()); 
-        //locations[8].setRegularSceneType(new City4Scene()); 
-        //locations[9].setRegularSceneType(new City5Scene());
+        locations[7].setRegularSceneType(new RegularCityScene()); 
+        locations[8].setRegularSceneType(new RegularCityScene()); 
+        locations[9].setRegularSceneType(new RegularCityScene());
         locations[10].setRegularSceneType(new RegularCityScene());
-        locations[11].setRegularSceneType(new RegularCityScene());
-        //locations[12].setRegularSceneType(new City3Scene()); 
-        //locations[13].setRegularSceneType(new City4Scene()); 
-        //locations[14].setRegularSceneType(new City5Scene());
+        locations[11].setGatherSceneType(new GatherCityScene());
+        locations[12].setGatherSceneType(new GatherCityScene()); 
+        locations[13].setRegularSceneType(new RegularCityScene()); 
+        locations[14].setRegularSceneType(new RegularCityScene());
         locations[15].setRegularSceneType(new RegularCityScene());
-        //locations[16].setRegularSceneType(new RegularCityScene());
-        //locations[17].setRegularSceneType(new City3Scene()); 
-        //locations[18].setRegularSceneType(new City4Scene()); 
-        //locations[19].setRegularSceneType(new City5Scene());
+        locations[16].setRegularSceneType(new RegularCityScene());
+        locations[17].setGatherSceneType(new GatherCityScene()); 
+        locations[18].setGatherSceneType(new GatherCityScene()); 
+        locations[19].setRegularSceneType(new RegularCityScene());
         locations[20].setRegularSceneType(new RegularCityScene());
         locations[21].setRegularSceneType(new RegularCityScene());
-        //locations[22].setRegularSceneType(new City3Scene()); 
-        //locations[23].setRegularSceneType(new City4Scene()); 
-        //locations[24].setRegularSceneType(new City5Scene());
+        locations[22].setGatherSceneType(new GatherCityScene()); 
+        locations[23].setGatherSceneType(new GatherCityScene()); 
+        locations[24].setRaftSceneType(new RaftCityScene());
     }
 
     /*static void moveActorsToStartingLocation(Map map) {
