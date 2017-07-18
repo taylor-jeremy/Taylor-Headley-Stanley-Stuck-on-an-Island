@@ -42,6 +42,8 @@ public class GameControl extends View {
         
         game.setActor(actor); // save actor in game
         
+        createMap(game); // create and initialize the new map
+        
         InventoryControl.addResource(Resource.Fruit);
         InventoryControl.addResource(Resource.Fruit);
         InventoryControl.addResource(Resource.Fruit);

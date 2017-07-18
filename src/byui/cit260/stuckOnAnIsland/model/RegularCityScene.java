@@ -6,6 +6,6 @@ package byui.cit260.stuckOnAnIsland.model;
  public class RegularCityScene extends RegularSceneType {
         
         public RegularCityScene(){
-            super("This is a normal scene.!");
+            super("This is a normal scene.");
         }
     }
