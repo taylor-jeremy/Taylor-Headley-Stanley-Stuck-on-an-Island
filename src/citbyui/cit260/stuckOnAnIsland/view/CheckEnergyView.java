@@ -48,7 +48,9 @@ public class CheckEnergyView extends View{
         
     }
 
-    private boolean doAction(String actorsCurrentEnergy, String actorsBuildTools, String actorsBuildRaft, String actorsMoveLocation, String actorsGatherResources, String actorsEatFood, String actorsDrinkWater) {
+    private boolean doAction(String actorsCurrentEnergy, String actorsBuildTools, String actorsBuildRaft, String actorsMoveLocation, 
+            String actorsGatherResources, String actorsEatFood, String actorsDrinkWater) {
+        
         int currentEnergy;
         int buildTools;
         int buildRaft;

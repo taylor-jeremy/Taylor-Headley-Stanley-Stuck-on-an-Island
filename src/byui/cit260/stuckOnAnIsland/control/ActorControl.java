@@ -55,16 +55,24 @@ public class ActorControl {
         return finalEnergy;
     }
     
-    public static int calcHealth(int currentHealth, int energy, int time) {
+    public static int calcHealth(int currentHealth, int energy, int time)
+    throws ActorControlException{
     
         
         
         if (energy < 0 || energy > 100) {
-            return -1;
+            throw new ActorControlException("Cannot set energy to " + energy +
+                    " because it is not in the range of 0-100.");
         }
  
         else if (time < 1 || time > 5) {
-            return -1;
+            throw new ActorControlException("Cannot set time to " + time +
+                    " because it is not in the range of 1-5 mintues.");
+        }
+        
+        else if (currentHealth < 0 || currentHealth > 100) {
+            throw new ActorControlException("Cannot set current health to " + currentHealth +
+                    " because it is not in the range of 0-100");
         }
                     
         else if (energy < 20) {

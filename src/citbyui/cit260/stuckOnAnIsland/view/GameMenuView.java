@@ -24,7 +24,7 @@ public class GameMenuView extends View {
                   + "\nI - View your Inventory"
                   + "\nW - Calculate your Water Storage Capacity?"
                   + "\nM - Display Map" 
-                  + "\nE - Check your energy?"
+                  + "\nE - Check your Energy?"
                   + "\nH - Check your Health?"
                   + "\nR - View list of Resources"
                   + "\nL - View list of Tools"
