@@ -49,13 +49,13 @@ public class CheckEnergyView extends View{
     }
 
     private boolean doAction(String actorsCurrentEnergy, String actorsBuildTools, String actorsBuildRaft, String actorsMoveLocation, String actorsGatherResources, String actorsEatFood, String actorsDrinkWater) {
-        int currentEnergy = 0;
-        int buildTools = 0;
-        int buildRaft = 0;
-        int moveLocation = 0;
-        int gatherResources = 0;
-        int eatFood = 0;
-        int drinkWater = 0;
+        int currentEnergy;
+        int buildTools;
+        int buildRaft;
+        int moveLocation;
+        int gatherResources;
+        int eatFood;
+        int drinkWater;
         
         try {
             try {
