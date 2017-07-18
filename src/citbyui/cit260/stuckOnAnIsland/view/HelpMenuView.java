@@ -19,7 +19,7 @@ public class HelpMenuView extends View {
                   + "\nF - How to build the raft?"
                   + "\nC - How to check raft status?"
                   + "\nE - How does energy work?"
-                  + "\nH - How does helath work?"
+                  + "\nH - How does health work?"
                   + "\nQ - Quit"
                   + "\n-----------------------------------------");
     }
